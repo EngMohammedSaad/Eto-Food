@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مطبخ ETO | كل الأكلات المصرية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff7ec;--ink:#17233b;--mut:#6b7488;--tq:#00b3a4;--tq2:#007f8c;--or:#ff6a3d;--yl:#ffc83d;--card:#fff;--soft:#e6fbf8;--warm:#fff0e8;--sh:#17233b18;--r:26px}
+[data-t=d]{--bg:#0e1828;--ink:#eef3fb;--mut:#9fb0c8;--card:#16263d;--soft:#0f3a40;--warm:#33231f;--sh:#0008;--tq2:#3fd9cb}
+*{box-sizing:border-box;margin:0}
+body{font-family:Cairo,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;overflow-x:hidden;transition:background .3s}
+a{color:var(--tq2);font-weight:700}
+button{font-family:Cairo}
+.hero{position:relative;padding:60px 20px 110px;text-align:center;color:#fff;overflow:hidden;background:linear-gradient(135deg,#007f8c,#00b3a4 45%,#2fd6a0)}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:70px;background:var(--bg);clip-path:ellipse(60% 100% at 50% 100%)}
+.blob{position:absolute;border-radius:50%;filter:blur(8px);opacity:.35;animation:fl 10s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-30px) scale(1.08)}}
+.em{position:absolute;font-size:clamp(34px,6vw,66px);animation:fl 8s ease-in-out infinite;filter:drop-shadow(0 8px 10px #0004)}
+.nav{position:absolute;top:16px;left:16px;display:flex;gap:8px;z-index:2}
+.pill{border:0;border-radius:50px;padding:8px 18px;background:#ffffff35;color:#fff;font-weight:800;cursor:pointer;backdrop-filter:blur(6px);transition:.2s}
+.pill:hover{background:#fff;color:var(--tq2)}
+.in{position:relative;max-width:820px;margin:auto}
+.tag{display:inline-block;background:#ffffff30;padding:6px 20px;border-radius:50px;font-weight:700}
+.hero h1{font-size:clamp(46px,10vw,120px);font-weight:900;line-height:1.1;margin:12px 0;text-shadow:0 6px 0 #0002}
+.hero h1 b{color:var(--yl)}
+.hero p{font-size:clamp(17px,2.4vw,23px);margin-bottom:26px}
+.sbox{display:flex;background:#fff;border-radius:60px;padding:8px;box-shadow:0 20px 50px #00403f55;max-width:640px;margin:auto}
+.sbox input{flex:1;min-width:0;border:0;outline:0;font:700 18px Cairo;padding:10px 22px;background:none;color:#17233b}
+.sbox button{border:0;border-radius:50px;background:linear-gradient(135deg,var(--or),#ff9a3d);color:#fff;font:800 17px Cairo;padding:0 32px;cursor:pointer;transition:.25s}
+.sbox button:hover{transform:scale(1.06)}
+.sug{margin-top:18px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.sug span{background:#ffffff2e;padding:4px 16px;border-radius:50px;cursor:pointer;font-weight:600}
+.sug span:hover{background:#fff;color:var(--tq2)}
+.stats{display:flex;gap:34px;justify-content:center;margin-top:26px}
+.stats b{display:block;font-size:30px;color:var(--yl);line-height:1.2}
+.wrap{max-width:1200px;margin:auto;padding:26px 20px 60px}
+.head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-bottom:14px}
+h2{font-size:30px;font-weight:900}
+.bar2{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:24px}
+.chip{padding:8px 18px;border-radius:50px;border:2px solid #ffd9b8;background:var(--card);color:var(--ink);font:700 14px Cairo;cursor:pointer;transition:.2s}
+.chip.on,.chip:hover{background:var(--or);border-color:var(--or);color:#fff}
+select.chip{outline:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px}
+.card{background:var(--card);border-radius:var(--r);overflow:hidden;cursor:pointer;box-shadow:0 10px 30px var(--sh);transition:.35s;opacity:0;transform:translateY(26px);animation:up .6s forwards;position:relative}
+@keyframes up{to{opacity:1;transform:none}}
+.card:hover{transform:translateY(-10px);box-shadow:0 24px 50px var(--sh)}
+.im{height:200px;display:grid;place-items:center;font-size:70px;overflow:hidden;background:linear-gradient(135deg,#ffe3c2,#ffc9a1)}
+.im img{width:100%;height:100%;object-fit:cover;transition:.6s;animation:fi .6s}
+@keyframes fi{from{opacity:0}}
+.card:hover .im img{transform:scale(1.12)}
+.badge{position:absolute;top:12px;right:12px;background:#fffffff2;color:var(--tq2);padding:1px 14px;border-radius:50px;font-size:13px;font-weight:800;z-index:1}
+.hrt{position:absolute;top:10px;left:10px;width:38px;height:38px;border-radius:50%;border:0;background:#fffffff2;color:#c9ced8;font-size:22px;cursor:pointer;z-index:1;transition:.2s;line-height:1}
+.hrt.on{color:#ff3b5c}.hrt:hover{transform:scale(1.2)}
+.tx{padding:14px 20px 20px}
+.tx h3{font-size:21px;font-weight:900}
+.meta{display:flex;gap:12px;color:var(--mut);font-size:13px;font-weight:700}
+.empty{grid-column:1/-1;text-align:center;padding:30px;background:var(--card);border-radius:var(--r)}
+.wsr{margin-top:12px;border:0;border-radius:50px;padding:12px 28px;background:var(--tq);color:#fff;font:800 16px Cairo;cursor:pointer}
+#detail{display:none}
+.top{background:linear-gradient(135deg,#007f8c,#00b3a4);padding:16px 20px;display:flex;gap:10px;flex-wrap:wrap}
+.top a,.top button{border:0;background:#fff;color:#007f8c;padding:8px 22px;border-radius:50px;text-decoration:none;font-weight:800;cursor:pointer;font-size:15px}
+.dh{display:grid;grid-template-columns:minmax(0,400px) 1fr;gap:34px;align-items:center;margin-bottom:30px}
+.big{border-radius:26px;overflow:hidden;aspect-ratio:4/3;max-height:300px;width:100%;display:grid;place-items:center;font-size:90px;background:linear-gradient(135deg,#ffe3c2,#ffc9a1);box-shadow:0 24px 60px var(--sh);border:6px solid var(--card);cursor:zoom-in}
+.big img{width:100%;height:100%;object-fit:cover}
+.dh h1{font-size:clamp(34px,6vw,56px);font-weight:900;color:var(--tq2);line-height:1.2}
+.facts{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.facts span{background:var(--card);padding:6px 18px;border-radius:50px;font-weight:700;box-shadow:0 4px 12px var(--sh)}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.box{background:var(--card);border-radius:var(--r);padding:26px 28px;margin-bottom:26px;box-shadow:0 10px 30px var(--sh)}
+.box h2{font-size:25px;margin-bottom:12px}
+.ex{white-space:pre-line;color:var(--ink);opacity:.9}
+.ings{display:flex;flex-wrap:wrap;gap:12px}
+.ing{padding:9px 20px;border-radius:50px;background:var(--soft);color:var(--tq2);font-weight:800;cursor:pointer;opacity:0;transform:scale(.4) rotate(-8deg);animation:pop .5s forwards;user-select:none}
+.ing.done{text-decoration:line-through;opacity:.45!important}
+@keyframes pop{to{opacity:1;transform:none}}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.gal img{width:100%;height:160px;object-fit:cover;border-radius:18px;transition:.3s;cursor:zoom-in}
+.gal img:hover{transform:scale(1.05)}
+.player{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;align-items:center}
+.stage{height:240px;border-radius:24px;background:radial-gradient(circle,var(--warm),#ffd9a8);display:grid;place-items:center;font-size:110px}
+[data-t=d] .stage{background:radial-gradient(circle,#4a2c22,#1f1a24)}
+.stage span{animation:bn .8s}
+@keyframes bn{0%{transform:scale(0) rotate(-50deg)}60%{transform:scale(1.25)}100%{transform:none}}
+.steps div{padding:10px 16px;border-radius:14px;cursor:pointer;color:var(--mut);font-weight:600;transition:.3s;border-right:5px solid transparent}
+.steps div.on{background:var(--warm);color:var(--ink);border-color:var(--or)}
+.pb{height:8px;background:var(--warm);border-radius:8px;margin:14px 0;overflow:hidden}
+.pb i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--or),var(--yl))}
+footer{text-align:center;padding:34px;color:var(--mut)}
+#lb{position:fixed;inset:0;background:#000d;display:none;place-items:center;z-index:9}
+#lb img{max-width:88%;max-height:88%;border-radius:16px}
+#lb button{position:absolute;top:50%;border:0;width:48px;height:48px;border-radius:50%;font-size:24px;cursor:pointer;background:#fff;color:#17233b}
+.gi{position:relative}.gi button{position:absolute;top:8px;left:8px;width:30px;height:30px;border:0;border-radius:50%;background:#000a;color:#fff;cursor:pointer;opacity:0;transition:.2s}.gi:hover button{opacity:1}
+.site{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:8px 18px;background:var(--card);box-shadow:0 4px 20px var(--sh)}
+.logo{font-weight:900;font-size:22px;text-decoration:none;color:var(--ink);white-space:nowrap}.logo b{color:var(--or)}
+#nv{display:flex;gap:6px;flex:1;overflow-x:auto;scrollbar-width:none}
+#nv a{padding:7px 16px;border-radius:50px;text-decoration:none;color:var(--ink);font-weight:700;white-space:nowrap;transition:.2s}
+#nv a:hover,#nv a.on{background:var(--or);color:#fff}
+#nv small{background:#ffffff40;border-radius:50px;padding:0 7px;margin-right:4px}
+.pill2{border:0;border-radius:50px;background:var(--warm);color:var(--ink);padding:7px 14px;font-weight:800;cursor:pointer;white-space:nowrap}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.tile{display:block;color:#fff;text-decoration:none;border-radius:32px;padding:30px 28px;min-height:270px;box-shadow:0 18px 40px var(--sh);transition:.35s}
+.tile:hover{transform:translateY(-10px) scale(1.02)}
+.tile .te{font-size:64px;display:block;line-height:1.3}.tile h3{font-size:34px;font-weight:900;line-height:1.2}.tile p{opacity:.95;margin:6px 0 14px}
+.tile .pv{font-size:30px;letter-spacing:6px}.tile .go{display:inline-block;margin-top:14px;background:#ffffff38;padding:6px 18px;border-radius:50px;font-weight:800}
+.ph{color:#fff;padding:36px 20px 32px;text-align:center}.ph h1{font-size:clamp(32px,6vw,54px);font-weight:900}.ph p{opacity:.95;max-width:640px;margin:4px auto 0}
+.ph .cnt{display:inline-block;margin-top:10px;background:#ffffff38;padding:2px 16px;border-radius:50px;font-weight:700}
+.lbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.lbar input{flex:1;min-width:200px;padding:10px 20px;border-radius:50px;border:2px solid #ffd9b8;background:var(--card);color:var(--ink);font:700 16px Cairo;outline:0}
+.lbar input:focus{border-color:var(--or)}
+@media(max-width:760px){.dh,.player{grid-template-columns:1fr}.big{max-height:240px}}
+@keyframes plate{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg) translateY(-4px) scale(1.18)}}
+.lg{display:inline-block;animation:plate 1.8s ease-in-out infinite;transform-origin:50% 80%}.logo:hover .lg{animation-duration:.5s}
+@keyframes pgin{from{opacity:0;transform:translateY(14px)}}#home,#listp,#detail{animation:pgin .5s}
+@keyframes sh{to{background-position:-200% 0}}
+.hero h1 b{background:linear-gradient(90deg,#ffc83d,#fff,#ffc83d);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 3s linear infinite}
+@keyframes rise{from{opacity:0;transform:translateY(40px) scale(.95)}}
+.tile{position:relative;overflow:hidden;animation:rise .7s backwards}.tile:nth-child(2){animation-delay:.12s}.tile:nth-child(3){animation-delay:.24s}
+.mos{display:flex;gap:8px;height:110px;margin-bottom:14px}.mos div{flex:1;border-radius:18px;overflow:hidden;background:#ffffff30;display:grid;place-items:center;font-size:40px}
+.mos img,.ban img{width:100%;height:100%;object-fit:cover;transition:.5s;animation:fi .6s}.tile:hover .mos img{transform:scale(1.18)}
+.ph{position:relative;overflow:hidden;padding:44px 20px 84px}
+.ph:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:50px;background:var(--bg);clip-path:ellipse(60% 100% at 50% 100%)}
+.ban{display:flex;justify-content:center;gap:14px;margin-top:20px;flex-wrap:wrap}
+.ban div{width:72px;height:72px;border-radius:50%;overflow:hidden;border:4px solid #fff;background:#ffffff40;display:grid;place-items:center;font-size:30px;box-shadow:0 8px 18px #0003;animation:fl 5s ease-in-out infinite}
+.top{border-radius:0 0 26px 26px;box-shadow:0 8px 24px var(--sh);margin-bottom:26px}
+.stage span{animation:bn .8s,bob 3s ease-in-out .8s infinite}@keyframes bob{50%{transform:translateY(-12px) rotate(5deg)}}
+.now{margin-top:18px;border:0;border-radius:50px;padding:10px 26px;background:var(--yl);color:#17233b;font:800 16px Cairo;cursor:pointer;animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #ffc83d99}70%{box-shadow:0 0 0 16px #ffc83d00}100%{box-shadow:0 0 0 0 #ffc83d00}}
+#up{position:fixed;bottom:20px;left:20px;width:46px;height:46px;border:0;border-radius:50%;background:var(--or);color:#fff;font-size:22px;cursor:pointer;box-shadow:0 8px 20px var(--sh);opacity:0;pointer-events:none;transform:translateY(20px);transition:.3s;z-index:15}#up.sh{opacity:1;pointer-events:auto;transform:none}
+.stars b{display:inline-block;font-size:28px;color:#d5d9e2;cursor:pointer;transition:.2s}.stars b.on{color:var(--yl)}.stars b:hover{transform:scale(1.3)}
+.hrt.on{animation:beat .4s}@keyframes beat{50%{transform:scale(1.5)}}
+#nv small{background:var(--warm);color:var(--ink)}#nv a.on small,#nv a:hover small{background:#fff4;color:#fff}
+@media(max-width:640px){.site{flex-wrap:wrap}#nv{order:3;flex-basis:100%}.logo{font-size:19px}.ban div{width:56px;height:56px}}
+.sea{display:flex;gap:14px;flex-wrap:wrap}.sea a{flex:1;min-width:150px;text-align:center;padding:16px;border-radius:24px;background:var(--card);box-shadow:0 10px 30px var(--sh);text-decoration:none;color:var(--ink);font-size:20px;font-weight:900;transition:.3s}.sea a:hover{transform:translateY(-6px);background:var(--warm)}
+.sea span{display:inline-block;font-size:34px;transform-origin:50% 0;animation:sw 2.4s ease-in-out infinite}.sea a:nth-child(2) span{animation-delay:-.6s}.sea a:nth-child(3) span{animation-delay:-1.2s}.sea a:nth-child(4) span{animation-delay:-1.8s}
+@keyframes sw{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(12deg)}}
+#md{position:fixed;inset:0;background:#000b;display:none;place-items:center;z-index:30;padding:14px}
+.mc{background:var(--card);border-radius:26px;padding:24px;max-width:560px;width:100%;max-height:90vh;overflow:auto;position:relative;animation:pgin .3s}
+.x{position:absolute;top:12px;left:14px;border:0;background:var(--warm);color:var(--ink);border-radius:50%;width:34px;height:34px;cursor:pointer}
+.mc input,.mc select,.mc textarea,.cf input,.cf textarea{width:100%;margin:6px 0;padding:10px 16px;border-radius:16px;border:2px solid #ffd9b8;background:var(--card);color:var(--ink);font:600 15px Cairo;outline:0}
+.sli{padding:8px 14px;margin:6px 0;border-radius:14px;background:var(--soft);color:var(--tq2);font-weight:800;cursor:pointer}.sli:hover{text-decoration:line-through}
+.cmt{background:var(--soft);border-radius:18px;padding:10px 16px;margin-bottom:10px;position:relative;animation:pgin .4s}.cmt b{color:var(--tq2);font-size:14px}.cmt p{margin:0}.cmt button{position:absolute;top:8px;left:10px;border:0;background:none;cursor:pointer}
+#ck{position:fixed;inset:0;z-index:40;background:linear-gradient(135deg,#007f8c,#2fd6a0);color:#fff;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:14px}
+#ck p{font-size:clamp(24px,5vw,40px);font-weight:900;max-width:760px;line-height:1.5}.ce{font-size:110px;animation:bob 3s ease-in-out infinite}
+#ck .cn{display:flex;gap:14px}#ck .cn button,#ck .x2{border:0;border-radius:50px;padding:12px 28px;font:800 18px Cairo;background:#fff;color:#007f8c;cursor:pointer}#ck .x2{position:absolute;top:16px;right:16px;padding:6px 18px;font-size:15px}
+
+/* ===== v2 ===== */
+.site{flex-wrap:wrap;gap:8px 10px;background:color-mix(in srgb,var(--card) 86%,transparent);backdrop-filter:blur(14px)}
+#nv{flex:1 1 380px;min-width:0}.site .pill2{flex:0 0 auto}
+@media(max-width:1100px){#nv{order:5;flex-basis:100%}}
+body{overflow-wrap:anywhere}img{max-width:100%}
+:focus-visible{outline:3px solid var(--yl);outline-offset:2px}
+#pr{position:fixed;top:0;right:0;height:4px;width:0;background:linear-gradient(90deg,var(--or),var(--yl));z-index:60}
+#toast{position:fixed;bottom:84px;left:50%;transform:translate(-50%,30px);background:var(--ink);color:var(--bg);padding:10px 26px;border-radius:50px;font-weight:800;opacity:0;pointer-events:none;transition:.3s;z-index:70;text-align:center}#toast.sh{opacity:1;transform:translate(-50%,0)}
+.card{border:1px solid #ffffff10}.card:hover .tx h3{color:var(--or)}
+.tile:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 0,#ffffff30,transparent 55%);pointer-events:none}
+.pw{text-align:center;padding:10px 4px}.pw .lk{font-size:64px;animation:bob 3s ease-in-out infinite}.pw h2{margin:4px 0}.pw p{color:var(--mut);margin-bottom:10px}
+.pw input{text-align:center;letter-spacing:5px;font-size:20px}.pw .er{color:#e5334f;font-weight:800;min-height:28px}
+.shk{animation:shk .4s}@keyframes shk{25%{transform:translateX(-12px)}75%{transform:translateX(12px)}}
+.mc.wide{max-width:680px}.mc label{font-weight:800;font-size:14px;display:block;margin-top:8px}.mc .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.eimg{display:flex;gap:12px;align-items:center}.eimg img{width:96px;height:72px;object-fit:cover;border-radius:14px}.mc .acts{margin:14px 0 4px}
+#fab{position:fixed;bottom:20px;right:20px;z-index:15;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--or),#ff9a3d);color:#fff;text-decoration:none;font-weight:800;padding:12px 20px;border-radius:50px;box-shadow:0 10px 26px var(--sh);transition:.25s}#fab:hover{transform:translateY(-4px) scale(1.04)}#fab span{font-size:24px}
+.chefb{display:flex;align-items:center;gap:18px;margin-top:34px;padding:22px 28px;border-radius:30px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#ff6a3d,#ffb347);box-shadow:0 16px 40px var(--sh);transition:.3s}.chefb:hover{transform:translateY(-6px)}.chefb .ce2{font-size:60px;animation:bob 3s ease-in-out infinite}.chefb h3{font-size:26px;font-weight:900}.chefb p{opacity:.95}
+.chat{max-width:820px;margin:-44px auto 0;position:relative;z-index:2;background:var(--card);border-radius:30px;box-shadow:0 20px 60px var(--sh);overflow:hidden}
+#msgs{height:min(56vh,500px);overflow:auto;padding:20px;display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth}
+.m{max-width:86%;padding:10px 16px;border-radius:20px;animation:pgin .3s}.m.b{background:var(--soft);border-top-right-radius:4px;align-self:flex-start}.m.b:before{content:"👨‍🍳 ";}
+.m.u{background:var(--or);color:#fff;border-top-left-radius:4px;align-self:flex-end}
+.m a{color:var(--or)}.typ i{display:inline-block;width:8px;height:8px;margin:0 2px;border-radius:50%;background:var(--tq2);animation:bt 1s infinite}.typ i:nth-child(2){animation-delay:.15s}.typ i:nth-child(3){animation-delay:.3s}@keyframes bt{50%{transform:translateY(-6px)}}
+#qr{display:flex;gap:8px;flex-wrap:wrap;padding:0 16px 12px}#qr .chip{padding:5px 14px;font-size:13px}
+.cin{display:flex;gap:8px;padding:12px;border-top:2px solid var(--warm)}.cin input{flex:1;min-width:0;padding:10px 20px;border-radius:50px;border:2px solid #ffd9b8;background:var(--card);color:var(--ink);font:700 16px Cairo;outline:0}
+@media print{.site,#fab,#up,.acts,#pr,footer{display:none!important}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important}}
+
+.m{animation:pgin .35s;max-width:88%;line-height:1.9}
+.m.b{display:block}.m.w:after{content:"";display:inline-block;width:2px;height:1.1em;background:var(--or);margin-right:3px;vertical-align:middle;animation:blk .8s steps(2) infinite}
+@keyframes blk{50%{opacity:0}}
+.m details{margin-top:6px}.m summary{cursor:pointer;font-weight:800;color:var(--or)}
+.rc{display:flex;align-items:center;gap:12px;margin:8px 0 2px;padding:10px 14px;background:var(--card);border-radius:18px;text-decoration:none;color:var(--ink);box-shadow:0 6px 18px var(--sh);transition:.25s}
+.rc:hover{transform:translateX(-4px)}.rc span{font-size:34px}.rc div{flex:1;line-height:1.4}.rc b{display:block}.rc small{color:var(--mut);font-weight:700}.rc i{font-style:normal;color:var(--or);font-weight:900}
+</style>
+</head>
+<body>
+<div id="pr"></div><div id="toast"></div><a id="fab" href="#/chef" title="اسأل الشيف إيتو"><span>👨‍🍳</span>اسأل الشيف</a>
+<header class="site">
+  <a class="logo" href="#/"><span class="lg">🍽️</span> مطبخ <b>ETO</b></a>
+  <nav id="nv"><a href="#/foods" data-p="foods">🍲 الأكلات</a><a href="#/drinks" data-p="drinks">🥤 المشروبات</a><a href="#/desserts" data-p="desserts">🍰 الحلويات</a><a href="#/fridge" data-p="fr">🧊 عندي إيه؟</a><a href="#/chef" data-p="chef">👨‍🍳 الشيف إيتو</a><a href="#/fav" data-p="fav">♥ المفضلة <small id="fc">0</small></a></nav>
+  <button class="pill2" id="slb">🛒 <b id="slc">0</b></button><button class="pill2" id="addb">➕ أضف</button><button class="pill2" id="rnd" title="أكلة عشوائية">🎲 فاجئني</button><button class="pill2" id="dk">🌙 ليلي</button>
+</header>
+
+<div id="home">
+  <section class="hero">
+    <div class="blob" style="width:260px;height:260px;background:var(--yl);top:-60px;left:-60px"></div>
+    <div class="blob" style="width:200px;height:200px;background:var(--or);bottom:30px;right:-40px;animation-delay:-3s"></div>
+    <span class="em" style="top:12%;right:7%">🍲</span><span class="em" style="top:55%;right:12%;animation-delay:-2s">🧆</span>
+    <span class="em" style="top:16%;left:8%;animation-delay:-4s">🍯</span><span class="em" style="top:60%;left:9%;animation-delay:-6s">🥙</span><span class="em" style="top:36%;right:2%;animation-delay:-1s">🍰</span><span class="em" style="top:34%;left:2%;animation-delay:-5s">🥤</span><span class="em" style="top:80%;right:30%;animation-delay:-3s">☕</span><span class="em" style="top:78%;left:28%;animation-delay:-7s">🍉</span>
+    <div class="in">
+      <span class="tag">🇪🇬 أحلى أكل في الدنيا</span>
+      <h1>مطبخ <b>ETO</b></h1>
+      <p>إيه اللي نفسك تاكله النهاردة؟ اختار القسم اللي يعجبك أو دوّر على أي أكلة وشوف بتتعمل من إيه وإزاي.</p>
+      <div class="sbox"><input id="q" placeholder="ابحث عن أكلة... مثلاً كشري" autocomplete="off"><button id="sb">ابحث</button></div>
+      <div class="sug" id="sug"></div><button class="now" id="now">🕒 اقترح عليّا حاجة دلوقتي</button>
+      <div class="stats"><div><b id="n1">0</b>أكلة</div><div><b id="n2">0</b>مشروب</div><div><b id="n3">0</b>حلوى</div></div>
+    </div>
+  </section>
+  <main class="wrap"><h2 style="margin-bottom:18px">اختار القسم</h2><div class="tiles" id="tiles"></div><h2 style="margin:36px 0 18px">🎉 مواسم</h2><div class="sea"><a href="#/ramadan"><span>🌙</span> رمضان</a><a href="#/eid"><span>🐑</span> العيد</a><a href="#/spring"><span>🌸</span> شم النسيم</a><a href="#/fridge"><span>🧊</span> اللي في التلاجة</a></div><h2 style="margin:36px 0 18px">⭐ مختارات النهاردة</h2><div class="grid" id="pk"></div></main>
+</div>
+
+<div id="listp" style="display:none">
+  <div class="ph" id="ph"></div>
+  <main class="wrap">
+    <div class="lbar"><input id="lq" placeholder="ابحث في القسم ده..." autocomplete="off">
+      <select class="chip" id="so"><option value="0">ترتيب: أبجدي</option><option value="1">الأسرع تحضيراً</option><option value="2">الأسهل</option></select><select class="chip" id="lv"><option value="0">كل المستويات</option><option value="1">سهل</option><option value="2">متوسط</option><option value="3">صعب</option></select><select class="chip" id="dt"><option value="0">كل الأنواع</option><option value="1">🌱 نباتي</option><option value="2">🥗 صيامي</option></select></div>
+    <div class="bar2" id="cats"></div>
+    <div class="grid" id="grid"></div>
+  </main>
+</div>
+
+<div id="chefp" style="display:none"><div class="ph" style="background:linear-gradient(135deg,#ff6a3d,#ffb347)"><h1>👨‍🍳 الشيف إيتو</h1><p>اسألني عن أي أكلة، مكونات، وقت، نصيحة، أو قولي عندك إيه في التلاجة.</p></div><main class="wrap"><div class="chat"><div id="msgs"></div><div id="qr"></div><div class="cin"><input id="ci" placeholder="اكتب سؤالك للشيف..." autocomplete="off" maxlength="200"><button class="wsr" id="cb" style="margin:0">ابعت</button></div></div></main></div>
+<div id="detail" style="display:none"><div class="top" id="topb"></div><div class="wrap" id="dbody"></div></div>
+<footer>        تم التطوير بواسطة<a href="https://engmohammedsaad.github.io/Eto.io/" target="_blank">Mohammed Eto</a> • صل ع النبي ❤️</footer>
+<div id="md"></div><div id="ck"></div><button id="up" title="لفوق">↑</button><div id="lb"><img></div>
+
+<script src="bot_data.js"></script>
+<script type="module">
+import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import{getAuth,signInAnonymously,onAuthStateChanged}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import{getDatabase,ref,onValue,set,push,remove,query,limitToLast}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+const app=initializeApp({apiKey:"AIzaSyDsar2dKsb9JU_7iG2EaTcW9GpQVjc2kek",authDomain:"eto-food.firebaseapp.com",databaseURL:"https://eto-food-default-rtdb.firebaseio.com",projectId:"eto-food",storageBucket:"eto-food.firebasestorage.app",messagingSenderId:"569404479277",appId:"1:569404479277:web:0efa5ab705b4bc314665a4"});
+const auth=getAuth(app),db=getDatabase(app);let uid=null;
+const ready=new Promise(res=>onAuthStateChanged(auth,u=>{if(u){uid=u.uid;res()}else signInAnonymously(auth).catch(e=>{console.error("فعّل Anonymous Auth",e);res()})}));
+const ev=(n,d)=>dispatchEvent(new CustomEvent(n,{detail:d}));
+const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:0;
+window.FB={uid:()=>uid,
+ rate:async(r,n)=>{await ready;if(uid)await set(ref(db,`ratings/${r}/${uid}`),n)},
+ onRatings:(r,cb)=>onValue(ref(db,"ratings/"+r),s=>{const v=s.val()||{},a=Object.values(v);cb(v[uid]||0,avg(a),a.length)}),
+ onComments:(r,cb)=>onValue(query(ref(db,"comments/"+r),limitToLast(50)),s=>cb(Object.entries(s.val()||{}).map(([id,c])=>({id,...c})))),
+ comment:async(r,name,text)=>{await ready;await push(ref(db,"comments/"+r),{uid,name,text,ts:Date.now()})},
+ delComment:(r,id)=>remove(ref(db,`comments/${r}/${id}`)),
+ addRecipe:async o=>{await ready;await push(ref(db,"recipes"),{...o,uid,ts:Date.now()})},
+ delRecipe:id=>remove(ref(db,"recipes/"+id)),setOv:async(k,o)=>{await ready;await set(ref(db,"overrides/"+k),o)},delOv:async k=>{await ready;await remove(ref(db,"overrides/"+k))}};
+onValue(ref(db,"overrides"),s=>ev("fbov",s.val()||{}));
+ready.then(()=>ev("fbready"));
+onValue(ref(db,"ratings"),s=>{const o=s.val()||{},m={};for(const k in o){const a=Object.values(o[k]);m[k]=[avg(a),a.length]}ev("fbratings",m)});
+onValue(ref(db,"recipes"),s=>ev("fbrecipes",Object.entries(s.val()||{}).map(([id,v])=>({id,...v})).sort((a,b)=>a.ts-b.ts)));
+</script>
+<script>
+// [ويكيبيديا, الاسم, ايموجي, النوع, السنة(تقريبية), دقايق, الصعوبة 1-3, الحكاية, المكونات، , الخطوات |, كلمات البحث عن الصورة |, عنوان الإنجليزي]
+const D=[
+["كشري","الكشري","🍜","رئيسي","حوالي القرن 19",45,1,"أكلة الغلابة اللي بقت أكلة الكل. رز ومكرونة وعدس وحمص وفوقهم الصلصة والتقلية والدقة. بيتقال إنها ظهرت في مصر حوالي القرن التاسع عشر.","رز،عدس أسود،مكرونة،حمص،صلصة طماطم،بصل محمّر،دقة وشطة","🍚 اسلق الرز والعدس والمكرونة|🍅 اعمل صلصة الطماطم بالتوم والخل|🧅 حمّر البصل لحد ما يقرمش|🥣 رص الطبقات وزوّد الصلصة والدقة","koshari|kushari|koshary","Koshari"],
+["فول مدمس","الفول المدمس","🫘","فطار","من آلاف السنين",180,1,"فطار المصريين الأول. بيتسوّى في قدرة الدمس على نار هادية بالساعات ويتتبّل بالزيت والليمون والكمون.","فول حراتي،زيت،ليمون،كمون،توم،طماطم وبقدونس","💧 انقع الفول واغسله|🔥 سوّيه ع نار هادية ساعات|🧄 تبّله بالكمون والليمون والتوم|🫒 حط الزيت وقدّمه سخن","ful medames|foul|ful|fuul","Ful medames"],
+["طعمية","الطعمية","🧆","فطار","قديمة، من قرون",40,1,"في مصر الطعمية بتتعمل من الفول مش الحمص. بتتطحن مع الكزبرة والشبت والبقدونس وتتقلي مقرمشة من بره وخضرا من جوه.","فول مجروش،كزبرة،شبت،بقدونس،توم،كمون،سمسم","🫘 اطحن الفول مع الأعشاب|🧂 زوّد التوابل والتوم|⚪ شكّلها أقراص ورشّ السمسم|🍳 اقليها في زيت سخن","falafel|taamiya|taameya|tamiya","Falafel"],
+["ملوخية","الملوخية","🥬","رئيسي","قديمة، من قرون",50,2,"بتتفرم ناعم وتتغلي في مرق الفراخ، وبعدين التقلية بالتوم والكزبرة وهي بتطشّ. بتتاكل مع الرز والفراخ.","ورق ملوخية،توم،كزبرة ناشفة،مرق فراخ،سمنة،ليمون","🔪 افرم الملوخية ناعم|🍲 سخّن المرق وحط الملوخية|🧄 حمّر التوم والكزبرة في السمنة|💥 حط التقلية وهي بتطشّ","molokhia|mulukhiyah|melokhia|mulukhiya|jute","Molokhia","f:Molokheya and rice with chiken, Egypt 2012.JPG"],
+["محشي","المحشي","🥬","رئيسي","قديم، انتشر في العصور الوسطى",120,3,"أكلة العزومات والفرحة. ورق عنب أو كرنب أو كوسة وفلفل بيتحشوا بالرز والأعشاب ويتسوّوا في المرق.","ورق عنب،رز،كزبرة وشبت وبقدونس،طماطم،بصل،مرق","🍃 اسلق الورق وجهّز الحشو|🍚 اخلط الرز بالأعشاب والتوابل|🌯 لفّ الورق لفّات صغيرة|♨️ رصّها وسوّيها في المرق","mahshi|mahshy|dolma|stuffed","Dolma","f:Mahshi koromb.jpg"],
+["فتة","الفتة","🍖","رئيسي","قديمة، أكلة الأعياد",90,2,"أكلة العيد الكبيرة. طبقات من العيش المحمّص والرز وصلصة الطماطم بالتوم والخل، وفوقها اللحمة الضاني.","عيش مقمّر،رز،لحمة ضاني،توم،خل،صلصة طماطم","🍞 حمّص العيش في الفرن|🍚 افرد الرز فوق العيش|🧄 صب صلصة التوم والخل|🥩 غطّيها باللحمة المسلوقة","fatta|fatteh|fattet","Fatteh"],
+["كفتة","الكفتة","🍢","مشويات","قديمة، منتشرة في الشرق",30,1,"لحمة مفرومة متبّلة بالبصل والبقدونس والبهارات، بتتشوي ع الفحم وريحتها تملا الشارع.","لحمة مفرومة،بصل،بقدونس،بهارات،ملح وفلفل","🥩 اخلط اللحمة بالبصل والأعشاب|🧂 زوّد البهارات|🍢 شكّلها ع أسياخ|🔥 اشويها ع الفحم","kofta|kofte|kefta","Kofta"],
+["مسقعة","المسقعة","🍆","رئيسي","شائعة من العصر الحديث",40,1,"أكلة صيامي من الباذنجان الرومي المقلي في صلصة طماطم بالتوم والفلفل والخل.","باذنجان رومي،طماطم،فلفل،توم،خل،زيت","🔪 قطّع الباذنجان شرايح|🍳 اقليه لحد ما يدهّب|🍅 اعمل الصلصة بالطماطم والتوم|🥘 سوّي الباذنجان في الصلصة","moussaka|mosaka|musaqqa",""],
+["حواوشي","الحواوشي","🥙","مشويات","في القرن العشرين (يُرجَّح)",35,1,"عيش بلدي محشي لحمة مفرومة بالبصل والفلفل والتوابل ومتحمّر في الفرن. أكلة الشارع الأولى.","عيش بلدي،لحمة مفرومة،بصل،فلفل أخضر،طماطم،بهارات","🥩 اخلط اللحمة بالبصل والفلفل|🫓 احشي العيش بالخليط|🔥 ادخله الفرن لحد ما يتحمّر|✂️ قطّعه وقدّمه سخن","hawawshi|hawawshy|hawawsh","Hawawshi"],
+["مكرونة بالبشاميل","المكرونة بالبشاميل","🍝","رئيسي","القرن 20 (تقريباً)",75,2,"أكلة الغدا في الجمعة. مكرونة وفوقها لحمة مفرومة بالصلصة وطبقة بشاميل ذهبية من فوق.","مكرونة،لحمة مفرومة،صلصة،لبن،دقيق،زبدة،جبنة","🍝 اسلق المكرونة|🥩 اعمل طبقة اللحمة بالصلصة|🥛 حضّر البشاميل|🔥 رص الطبقات وادخلها الفرن","bechamel|macaroni|makarona","Macaroni bechamel"],
+["كبدة إسكندراني","الكبدة الإسكندراني","🍖","مشويات","من إسكندرية، القرن 20 (تقريباً)",20,1,"كبدة بتتحمّر في السمنة مع التوم والشطة والكمون والفلفل الحار. ساندوتش الكبدة الإسكندراني حاجة تانية خالص.","كبدة بقري،توم،شطة،كمون،فلفل حار،عيش فينو","🔪 قطّع الكبدة شرايح|🧄 حمّر التوم والتوابل|🔥 زوّد الكبدة على نار عالية|🥖 قدّمها في العيش","liver|kebda|kibda",""],
+["حمام محشي","الحمام المحشي","🍗","رئيسي","قديم، أكلة العزومات",90,3,"الحمام بيتحشي بالفريك أو الرز بالمكسرات وبيتحمّر في الفرن. أكلة الأفراح والعزومات الكبيرة.","حمام،فريك،بصل،مكسرات،سمنة،بهارات","🕊️ نضّف الحمام وتبّله|🌾 جهّز حشوة الفريك|🍗 احشي الحمام|🔥 حمّره في الفرن","pigeon|hamam|squab",""],
+["ممبار","الممبار","🌭","مشويات","قديمة",90,3,"أمعاء الخروف بتتحشي بالرز والتوابل وبتتسوّى وتتحمّر. أكلة شعبية لأصحاب الذوق!","ممبار،رز،كزبرة،توم،بصل،توابل","🧼 نضّف الممبار كويس|🍚 جهّز حشوة الرز|🌭 احشيه وشبّكه|🍳 اسلقه وحمّره","mombar|mumbar|sausage","Mumbar"],
+["","الأسماك بأنواعها","🐟","رئيسي","من أيام الفراعنة",40,2,"مصر على النيل والبحرين المتوسط والأحمر، فالسمك له أنواع وطرق كتير: بلطي وبوري وقاروص ودنيس وموسى وسردين وجمبري وسبيط وكابوريا. بيتعمل مشوي ع الفحم أو في الفرن بالردة، ومقلي، وصيادية، وطاجن، وفتة سمك.","بلطي،بوري،قاروص،دنيس،موسى،سردين،جمبري،سبيط،ليمون،كمون،توم","🐟 اختار السمك الطازج ونضّفه|🍋 تبّله بالليمون والكمون والتوم|🔥 اشويه أو اقليه أو اعمله صيادية أو طاجن|🍽️ قدّمه مع الرز والسلطة والطحينة","","","en:Sayadieh"],
+["صيادية","الصيادية","🍛","رئيسي","من مدن القناة والإسكندرية",60,2,"سمك مقلي بيتقدم على رز بني بالبصل المحمّر والكمون وصلصة طماطم حارة.","سمك،رز،بصل،كمون،صلصة طماطم،توم","🐟 اقلي السمك|🧅 حمّر البصل لحد ما يسود|🍚 اطبخ الرز في مرق البصل|🍅 زوّد الصلصة وقدّم","sayadiyah|sayadieh|sayadeya|sayyadiyya","Sayadieh"],
+["","البامية","🥘","رئيسي","قديمة، من العصور الفرعونية (يُرجَّح)",70,2,"بامية بالصلصة واللحمة وتقلية التوم والكزبرة. من أكتر الأكلات اللي كل بيت بيعملها.","بامية،لحمة،طماطم،توم،كزبرة،بصل","🥩 سوّي اللحمة بالبصل|🍅 زوّد الصلصة|🌿 حط البامية|🧄 اعمل التقلية وغطّي","okra|bamya|bamia","","en:Bamia"],
+["شوربة عدس","شوربة العدس","🍲","شوربة ومقبلات","قديمة",35,1,"شوربة العدس الأصفر بالكمون والليمون. بتتقدم مع عيش محمّص وبتدفّي في الشتا.","عدس أصفر،بصل،جزر،كمون،ليمون،مرق","🥕 قطّع الخضار|🍲 اسلق العدس مع الخضار|🌀 اضرب الشوربة في الخلاط|🍋 زوّد الكمون والليمون","lentil soup|lentil","Lentil soup"],
+["بيصارة","البيصارة","🥣","فطار","قديمة",60,1,"أكلة صيامي من الفول المقشّر والخضرة والتوم. بتتاكل سخنة بالعيش البلدي.","فول مقشّر،شبت وكزبرة،توم،بصل،زيت،كمون","🫘 اسلق الفول لحد ما ينضج|🌿 اطحنه مع الأعشاب|🧄 اعمل التقلية|🍽️ قدّمها سخنة","bessara|bissara|besara","Bissara","en:Bissara"],
+["دقة (طعام)","الدقة","🧂","شوربة ومقبلات","قديمة",15,1,"خليط ناشف من المكسرات والسمسم والتوابل. بنغمّس فيه العيش في الزيت في الفطار.","سمسم،حمص،كزبرة،كمون،بندق،ملح","🥜 حمّص المكسرات والسمسم|🌿 زوّد الكزبرة والكمون|🥣 اطحنهم طحن خشن|🍞 غمّس فيها العيش","dukkah|duqqa|dukka","Dukkah"],
+["مخلل","المخلل المصري","🥒","شوربة ومقبلات","قديم",20,1,"خيار وجزر وليمون وباذنجان بيتخللوا في الماء والملح والخل. مفيش صنية أكل من غير طبق مخلل!","خيار،جزر،قرنبيط،ملح،خل،توم","🥒 اغسل الخضار|🧂 اعمل محلول الملح|🫙 رص الخضار في برطمان|⏳ سيبها كام يوم","pickled|torshi|pickles",""],
+["فطير مشلتت","الفطير المشلتت","🥞","مخبوزات","قديم، من الريف المصري",60,3,"عجين مفرود رفيع بطبقات كتير بيتدهن سمنة وبيتخبز. بيتاكل بالعسل والقشطة أو محشي.","دقيق،سمنة،ملح،ماء،عسل،قشطة","🥣 اعجن الدقيق والماء|🧈 ادهن العجين بالسمنة|🫓 افرده ولفّه طبقات|🔥 اخبزه لحد ما يدهّب","feteer|fiteer|fatir|meshaltet","Feteer meshaltet"],
+["عيش بلدي","العيش البلدي","🫓","مخبوزات","من أيام الفراعنة",90,3,"الخبز اليومي لكل المصريين. دقيق قمح كامل بيتخمّر وبيتخبز في فرن حار فيجي منفوخ وسخن.","دقيق قمح كامل،ماء،خميرة،ملح","🌾 اعجن الدقيق والماء والخميرة|⏳ سيب العجين يخمّر|⭕ شكّله أقراص|🔥 اخبزه في فرن شديد الحرارة","baladi|aish|eish|aysh","Aish baladi"],
+["كنافة","الكنافة","🍯","حلويات","يُرجَّح من العصر الفاطمي",60,2,"ملكة رمضان. شعيرات رفيعة بتتفرك بالسمنة وتتحشي بالقشطة أو المكسرات وتتخبز وتتسقي بالشيرة.","عجين كنافة،سمنة،قشطة،مكسرات،شيرة،فستق","🧈 افرك العجين بالسمنة|🥛 حط الحشو قشطة أو مكسرات|♨️ اخبزها لحد ما تتحمّر|🍯 اسقيها شيرة","kunafa|kunafeh|knafeh|kanafeh|konafa","Kunafa"],
+["بسبوسة","البسبوسة","🍰","حلويات","قديمة، اشتهرت في العصر العثماني",50,1,"كيكة السميد اللي لازم تتعمل في كل بيت. بتتخبز لحد ما وشها يحمّر وبعدين تتغرق في الشيرة.","سميد،سكر،سمنة،زبادي،جوز هند،لوز،شيرة","🥣 اخلط السميد بالسمنة والزبادي|🥧 افرده وقطّعه|🔥 اخبزه لحد ما يحمّر|🍯 اسقيه شيرة سخنة","basbousa|basbusa|namoura|harissa|revani","Basbousa"],
+["أم علي","أم علي","🥣","حلويات","يُنسب للعصر المملوكي (حكاية شعبية)",35,1,"عجين أو بسكويت ولبن ومكسرات وقشطة بتتحمّر في الفرن وبتتاكل سخنة. ليها حكاية مشهورة بس مش مؤكدة تاريخياً.","عجين رقيق،لبن،سكر،مكسرات،زبيب،جوز هند،قشطة","🥐 فتّت العجين في طاسة|🥛 زوّد اللبن والسكر والمكسرات|🥥 غطّيه بالقشطة وجوز الهند|🔥 ادخله الفرن وقدّمه سخن","om ali|umm ali|um ali|oum ali|om ali","Umm Ali"],
+["بقلاوة","البقلاوة","🥮","حلويات","قديمة، مشهورة في العصر العثماني",70,3,"طبقات عجين رقيقة بينها مكسرات بتتخبز بالسمنة وبتتسقي بالشيرة. هشّة من برّه وحلوة من جوّه.","عجين فيلو،مكسرات،سمنة،شيرة،قرفة","📄 رص طبقات العجين وبرّشها بالسمنة|🥜 زوّد المكسرات|🔪 قطّعها أشكال|🍯 اخبزها واسقيها شيرة","baklava|baklawa","Baklava"],
+["رز بلبن","الرز باللبن","🍚","حلويات","قديمة",40,1,"رز بيتسوّى في اللبن مع السكر والفانيليا وبيتصب في أطباق ويتبرّد، ومعاه مكسرات وقرفة.","رز،لبن،سكر،فانيليا،نشا،مكسرات،قرفة","🍚 سوّي الرز في اللبن|🍬 زوّد السكر والفانيليا|🥄 قلّب لحد ما يتخن|❄️ صبّه في أطباق وبرّده","rice pudding|roz bel laban|riz bi laban","Rice pudding"],
+["قطايف","القطايف","🥞","حلويات","قديمة، من أكلات رمضان",45,2,"عجينة بتتصب أقراص صغيرة وتتحشي مكسرات أو قشطة وتتقلي أو تتخبز وتتسقي بالشيرة. نجم رمضان.","دقيق،خميرة،مكسرات،قشطة،شيرة،زيت","🥣 حضّر العجينة وصبّها أقراص|🥜 احشيها قشطة أو مكسرات|🍳 اقليها أو اخبزها|🍯 اغمسها في الشيرة","qatayef|katayef|kataif|atayef","Qatayef"],
+["لقمة القاضي","لقمة القاضي","🍩","حلويات","قديمة",40,2,"كور صغيرة من العجين بتتقلي وتتغطس في الشيرة أو العسل. مقرمشة من برّه وطرية من جوّه.","دقيق،خميرة،سكر،زيت،شيرة،قرفة","🥣 حضّر العجينة وسيبها تخمّر|⚪ شكّلها كور صغيرة|🍳 اقليها في زيت سخن|🍯 اغمسها في الشيرة","luqaimat|loukoumades|lokma|zalabia|zalabya","Loukoumades"],
+["مهلبية","المهلبية","🍮","حلويات","قديمة",25,1,"بودينج اللبن والنشا بماء الورد والفستق. حلوى خفيفة وبتتقدم باردة.","لبن،نشا،سكر،ماء ورد،فستق،جوز هند","🥛 سخّن اللبن مع السكر|🥄 زوّد النشا وقلّب|🌹 زوّد ماء الورد|❄️ برّدها وزيّنها بالفستق","muhallebi|mahalabia|mehalabiya|muhalabiyya","Muhallebi"],
+["كحك","كحك العيد","🍪","حلويات","من أيام الفراعنة (حسب الروايات)",120,3,"كعك العيد بيتحشي عجوة أو ملبن وبيتغطّى سكر بودرة. ريحته بتبقى في كل بيت قبل العيد.","دقيق،سمنة،سكر،عجوة،ملبن،بودرة سكر","🧈 اعجن الدقيق بالسمنة|🌴 جهّز الحشو|🍪 شكّل الكحك واطبعه|🔥 اخبزه ورشّ السكر","kahk|ka'ak|kaak|eid cookies","Kahk"],
+["حلاوة طحينية","الحلاوة الطحينية","🍬","حلويات","قديمة",20,1,"سمسم مطحون بالسكر بيتحوّل لقطع هشة. بتتاكل مع العيش أو لوحدها.","طحينة،سكر،فستق،فانيليا،ماء","🥣 اغلي السكر لحد ما يتماسك|🥜 اخلطه بالطحينة|🥄 زوّد الفستق|🧊 اسكبه في قالب وبرّده","halva|halawa|halawa tahiniya","Halva"],
+["فسيخ","الفسيخ","🐟","مواسم","من أيام الفراعنة (حسب الروايات)",20,3,"سمك بوري مملّح ومتخمّر بيتاكل في شم النسيم. أكلة بتحبها وإلا بتهرب منها!","سمك بوري،ملح،بصل أخضر،ليمون،زيت،عيش","🐟 اغسل الفسيخ كويس|🧂 شيل العضم|🧅 قطّعه مع البصل|🍋 زوّد الليمون والزيت","fesikh|feseekh|feseekh|fesiekh","Fesikh"],
+["سوبيا","السوبيا","🥛","مشروبات","من أكلات رمضان",30,1,"مشروب أبيض بارد من الأرز واللبن وجوز الهند والسكر. بيشرب في رمضان وفي الصيف.","رز،لبن،جوز هند،سكر،فانيليا،ماء","🍚 انقع الرز|🥥 اخلط الرز مع جوز الهند واللبن|🌀 صفّيه|❄️ زوّد السكر وبرّده","sobia|sobya|coconut milk","Sobia","en:Sobia|en:Coconut milk"],
+["كركديه","الكركديه","🌺","مشروبات","قديم، من أيام الفراعنة (حسب الروايات)",15,1,"مشروب أحمر من ورد الكركديه بيتشرب سخن في الشتا وساقع في الصيف. حلو وفيه حموضة.","كركديه مجفف،سكر،ماء،ثلج","💧 اغلي الماء|🌺 زوّد الكركديه|⏳ سيبه يتنقع|🧊 صفّيه وزوّد السكر وقدّمه","karkade|hibiscus|karkadé","Karkade","en:Karkade|en:Hibiscus tea"],
+["عصير قصب","عصير القصب","🥤","مشروبات","قديم",5,1,"قصب السكر بيتعصر طازج وبيتشرب بالثلج. عصير الصيف المفضل لكل المصريين.","قصب سكر،ثلج،ليمون","🌿 قشّر القصب|⚙️ اعصره في المعصرة|🍋 زوّد الليمون|🧊 قدّمه بارد","sugarcane|sugar cane juice","Sugarcane juice","en:Sugarcane juice"],
+["سحلب","السحلب","🥛","مشروبات","قديم، مشروب الشتا",15,1,"مشروب سخن كثيف من اللبن والنشا بالمكسرات وجوز الهند والقرفة. مفيش أحلى منه في برد الشتا.","لبن،نشا أو مسحوق سحلب،سكر،قرفة،جوز هند،مكسرات","🥛 سخّن اللبن مع السكر|🥄 زوّد السحلب وقلّب لحد ما يتخن|🥣 صبّه في كوباية|🥥 رشّ المكسرات وجوز الهند والقرفة","","","en:Sahlab"],
+["قمر الدين","قمر الدين","🍑","مشروبات","من أكلات رمضان",20,1,"عصير مشمش مجفف بيتنقع ويتخلط ويتشرب ساقع في رمضان. حلو وكثيف ومنعش.","قمر الدين،ماء،سكر،ثلج","🍑 قطّع قمر الدين وانقعه|🌀 اخلطه مع الماء|🍬 زوّد السكر حسب الذوق|🧊 قدّمه بارد","","","en:Qamar al-Din"],
+["","التمر الهندي","🥤","مشروبات","قديم",20,1,"عصير حلو وحامض من ثمار التمر الهندي المنقوعة. بيتباع في الشارع بكاسات كبيرة ساقعة.","تمر هندي،ماء،سكر،ثلج","💧 انقع التمر الهندي في ماء سخن|🥄 اعصره وصفّيه|🍬 زوّد السكر|🧊 قدّمه بالتلج","","","en:Tamar hindi|en:Tamarind"],
+["","العرقسوس","🧋","مشروبات","قديم، من أيام الفراعنة (حسب الروايات)",30,1,"مشروب أسود ساقع من جذور عرق السوس، بيتباع في الشارع من زمان وبيتقدم بالتلج.","عرق سوس،ماء،سكر،ثلج","💧 انقع العرقسوس ساعات|🔥 اغليه شوية|🧊 صفّيه وبرّده|🥤 قدّمه بالتلج","","","en:Erq sous"],
+["","الينسون","☕","مشروبات","قديم",10,1,"مشروب سخن من بذور الينسون بيتشرب بعد الأكل أو بالليل. ريحته مريحة وطعمه حلو.","ينسون،ماء،سكر،قرفة","💧 اغلي الماء|🌿 زوّد الينسون وسيبه يتسوّى|🍬 صفّيه وزوّد السكر|☕ قدّمه سخن","","","en:Anise|en:Anise tea"],
+["شاي","الشاي","🍵","مشروبات","من العصر الحديث",10,1,"المصريين بيشربوا الشاي كتير: الصبح وبعد الغدا وفي السهرة. بيتقدم في كوبايات صغيرة سادة أو بسكر أو باللبن، وفيه شاي كشري وشاي بلبن.","شاي أسود،ماء،سكر،لبن (اختياري)","💧 اغلي الماء|🍃 زوّد الشاي وسيبه يتسوّى|🍬 زوّد السكر|🍵 صفّيه وقدّمه سخن","","Tea","en:Tea"],
+["","الشاي بالنعناع","🌿","مشروبات","من العصر الحديث",10,1,"شاي بورق النعناع الطازج. منعش وريحته حلوة، وبيتشرب بعد الأكل في الصيف والشتا.","شاي أسود،نعناع طازج،ماء،سكر","💧 اغلي الماء|🍃 زوّد الشاي والنعناع|⏳ سيبه دقيقتين|🍵 صفّيه وقدّمه","","","en:Mint tea|en:Tea"],
+["قهوة تركية","القهوة التركي (المظبوط)","☕","مشروبات","من العصر العثماني",10,1,"بن مطحون ناعم بيتسوّى في كنكة صغيرة ع نار هادية وبيتقدم برغوة فوقه. بتتطلب سادة أو مظبوط أو زيادة.","بن مطحون ناعم،ماء،سكر،هيل (اختياري)","💧 حط الماء والسكر في الكنكة|☕ زوّد البن وقلّب|🔥 سخّن ع نار هادية لحد ما تطلع الرغوة|🥄 صبّها في فنجان وسيبها تهدى","","Turkish coffee","en:Turkish coffee|en:Coffee"]
+];
+`مشويات~شاورما فراخ~🌯~30~2~فراخ متبّلة بتتسوّى على السيخ وتتلف في عيش مع طحينة وتوم.~فراخ،زبادي،توم،بهارات،عيش،طحينة~🍗 تبّل الفراخ ساعة|🔥 اشويها لحد ما تتحمّر|🔪 قطّعها وحطها في العيش|🥣 زوّد الطحينة والتوم~Shawarma
+فطار~شكشوكة~🍳~20~1~بيض متسوّي في صلصة طماطم وفلفل وبصل بتتاكل في الطاسة بالعيش.~بيض،طماطم،فلفل،بصل،كمون~🧅 حمّر البصل والفلفل|🍅 زوّد الطماطم والتوابل|🥚 اكسر البيض فوقها|🍞 قدّمها سخنة~Shakshouka
+شوربة ومقبلات~حمص بالطحينة~🥣~15~1~حمص مهروس بالطحينة والليمون والتوم وفوقه زيت زيتون.~حمص مسلوق،طحينة،ليمون،توم،زيت زيتون~🫘 اسلق الحمص|🌀 اضربه مع الطحينة والليمون|🥣 افرده في طبق|🫒 زوّد الزيت~Hummus
+شوربة ومقبلات~بابا غنوج~🍆~35~1~باذنجان مشوي مهروس بالطحينة والتوم والليمون.~باذنجان،طحينة،توم،ليمون،زيت~🔥 اشوي الباذنجان|🥄 قشّره وهرسه|🥣 اخلطه بالطحينة والتوم|🫒 زوّد الزيت~Baba ghanoush
+شوربة ومقبلات~سلطة بلدي~🥗~10~1~طماطم وخيار وجرجير وبصل بالليمون والكمون، لازم على كل سفرة.~طماطم،خيار،بصل،جرجير،ليمون،كمون~🔪 قطّع الخضار|🍋 زوّد الليمون والزيت|🧂 تبّل بالملح والكمون|🥗 قلّب وقدّم~Arab salad
+شوربة ومقبلات~سمبوسك~🥟~45~2~عجين رقيق محشي جبنة أو لحمة ومقلي لحد ما يقرمش.~عجين،جبنة أو لحمة،بصل،زيت~🥣 جهّز الحشو|🥟 احشي العجين وقفّله|🍳 اقليه في زيت سخن|🍽️ قدّمه سخن~Sambusak
+مشويات~كباب~🍢~40~2~لحمة متبّلة بتتشوي على الفحم ومعاها رز وسلطة.~لحمة،بصل،بهارات،ملح وفلفل،رز~🥩 قطّع اللحمة وتبّلها|🍢 اسقّطها ع أسياخ|🔥 اشويها ع الفحم|🍚 قدّمها مع الرز~Kebab
+مشويات~فراخ مشوية~🍗~60~1~فراخ متبّلة بالتوم والليمون ومتحمّرة في الفرن أو ع الفحم.~فراخ،توم،ليمون،بهارات،زبدة~🧄 تبّل الفراخ|⏳ سيبها ساعة|🔥 ادخلها الفرن|🍽️ قدّمها مع البطاطس~Roast chicken
+مشويات~سجق~🌭~20~1~سجق بقري بيتحمّر في طاسة مع فلفل وبصل وطماطم.~سجق،فلفل،بصل،طماطم،زيت~🌭 قطّع السجق|🍳 حمّره في طاسة|🫑 زوّد الخضار|🥖 قدّمه في عيش~Sujuk
+فطار~بسطرمة بالبيض~🥓~15~1~شرايح بسطرمة متحمّرة وفوقها بيض مقلي، فطار الجمعة.~بسطرمة،بيض،زبدة،طماطم~🧈 سخّن الزبدة|🥓 حمّر البسطرمة|🥚 اكسر البيض فوقها|🍞 قدّم بالعيش~Pastirma
+فطار~جبنة دمياطي~🧀~5~1~جبنة بيضا بتتاكل بالطماطم والخيار والعيش.~جبنة دمياطي،طماطم،خيار،زيت زيتون~🧀 قطّع الجبنة|🍅 زوّد الطماطم والخيار|🫒 رشّ زيت|🍞 كُل بالعيش~Domiati cheese
+رئيسي~رز بالشعرية~🍚~30~1~رز أبيض بشعرية محمّرة في السمنة، جنب أي طبق.~رز،شعرية،سمنة،ملح،مرق~🍝 حمّر الشعرية|🍚 زوّد الرز|💧 زوّد المرق|♨️ غطّيه لحد ما يستوي~Pilaf
+رئيسي~طاجن لحمة~🍲~120~2~لحمة مسوّية في طاجن فخار مع بصل وطماطم وبهارات.~لحمة،بصل،طماطم،بهارات،سمنة~🥩 حمّر اللحمة|🧅 زوّد البصل والطماطم|🍲 حطها في الطاجن|🔥 ادخلها الفرن ساعتين~Tajine
+مخبوزات~فطاير~🥧~60~2~عجين محشي جبنة أو سبانخ أو لحمة ومخبوز في الفرن.~دقيق،خميرة،جبنة،سبانخ،زيت~🥣 اعجن العجين|🥬 جهّز الحشو|🥧 احشي وقفّل|🔥 اخبز لحد ما يدهّب~Fatayer
+شوربة ومقبلات~شوربة لسان عصفور~🍜~30~1~شوربة بالمرق ولسان العصفور، دافية ومناسبة لأي وقت.~لسان عصفور،مرق،سمنة،ملح~🍲 سخّن المرق|🍝 زوّد لسان العصفور|⏳ سيبها تستوي|🥄 قدّمها سخنة~Orzo
+شوربة ومقبلات~بطاطس محمّرة~🍟~20~1~بطاطس مقلية لحد ما تدهّب ومتقرمشة.~بطاطس،زيت،ملح~🔪 قطّع البطاطس|💧 اغسلها وانشّفها|🍳 اقليها|🧂 رشّ الملح~French fries
+حلويات~زلابية~🍩~30~2~عجين مقلي هش بيتغطس في الشيرة، حلاوة الموالد.~دقيق،نشا،خميرة،زيت،شيرة~🥣 حضّر العجينة|🍳 اقليها كور في زيت|🍯 اغمسها في الشيرة|🍽️ قدّمها~Zalabia
+حلويات~عيش السرايا~🍞~40~2~عيش محمّر بالقشطة والشيرة ومغطّى مكسرات.~عيش توست،قشطة،شيرة،مكسرات~🍞 حمّر العيش|🥛 زوّد القشطة|🍯 اسقيه شيرة|🥜 رشّ المكسرات~Aish el Saraya
+حلويات~كريم كراميل~🍮~60~2~كاسترد اللبن والبيض مع طبقة كراميل ذهبية.~لبن،بيض،سكر،فانيليا~🍬 اعمل الكراميل|🥛 اخلط اللبن والبيض|♨️ سوّيه في حمام مائي|❄️ برّده وقلّبه~Crème caramel
+حلويات~آيس كريم~🍨~30~1~آيس كريم بنكهات فانيليا وشوكولاتة وفراولة.~لبن،كريمة،سكر،فانيليا~🥛 اخلط اللبن والسكر|🥣 زوّد الكريمة|❄️ جمّده|🍨 قدّمه~Ice cream
+حلويات~خشاف~🥣~15~1~فواكه مجففة منقوعة في سائل حلو، سفرة رمضان.~قمر الدين،زبيب،تمر،لوز،ماء~💧 انقع الفواكه|🍬 زوّد السكر|🥣 زوّد المكسرات|❄️ برّده~Khoshaf
+حلويات~ملبن~🍬~25~2~حلوى طرية بالنشا والسكر وماء الورد والفستق.~نشا،سكر،ماء ورد،فستق~🍬 اغلي السكر|🥄 زوّد النشا|🌹 زوّد ماء الورد|🧊 سيبه يتجمّد~Turkish delight
+حلويات~غريبة~🍪~35~2~بسكوت هش بالسمنة بيدوب في بقك.~دقيق،سمنة،سكر بودرة،فستق~🧈 اخفق السمنة والسكر|🥣 زوّد الدقيق|🍪 شكّلها|🔥 اخبزها~Ghoriba
+حلويات~بطاطا مشوية~🍠~40~1~بطاطا مشوية بتتباع في الشتا وريحتها مميّزة.~بطاطا،عسل أو سكر~🍠 اغسل البطاطا|🔥 اشويها ساعة|🧈 قشّرها|🍯 زوّد العسل~Sweet potato
+عصاير~عصير مانجا~🥭~5~1~عصير مانجا طازج وكثيف.~مانجا،سكر،ثلج،ماء~🥭 قشّر المانجا|🌀 اخلطها مع الماء|🍬 زوّد السكر|🧊 قدّمه بارد~Mango
+عصاير~عصير فراولة~🍓~5~1~فراولة حمرا حلوة ومنعشة.~فراولة،سكر،لبن،ثلج~🍓 اغسل الفراولة|🌀 اخلطها|🍬 زوّد السكر|🧊 قدّم~Strawberry
+عصاير~عصير جوافة~🍈~5~1~عصير جوافة كثيف وريحته مميزة.~جوافة،سكر،ماء،ثلج~🍈 قطّع الجوافة|🌀 اخلطها|🥄 صفّيه|🧊 قدّمه~Guava
+عصاير~عصير برتقال~🍊~5~1~برتقال معصور طازج.~برتقال،سكر،ثلج~🍊 اغسل البرتقال|🥤 اعصره|🧊 زوّد الثلج|🥛 قدّمه~Orange juice
+عصاير~ليمون بالنعناع~🍋~5~1~ليمون ونعناع وثلج، أنعش مشروب في الصيف.~ليمون،نعناع،سكر،ثلج،ماء~🍋 اعصر الليمون|🌿 اهرس النعناع|🌀 اخلطهم|🧊 قدّمه بالتلج~Lemonade
+عصاير~موز بلبن~🍌~5~1~موز ولبن وسكر، مشروب شبعان.~موز،لبن،سكر،ثلج~🍌 قطّع الموز|🥛 زوّد اللبن|🌀 اخلطهم|🥤 قدّمه~Banana
+عصاير~عصير رمان~🍎~10~1~رمان معصور حلو وفيه حموضة.~رمان،سكر،ماء~🔴 فصفص الرمان|🌀 اخلطه|🥄 صفّيه|🧊 قدّمه~Pomegranate juice
+عصاير~عصير بطيخ~🍉~5~1~بطيخ ساقع للصيف الحر.~بطيخ،ثلج،سكر~🍉 قطّع البطيخ|🌀 اخلطه|🍬 زوّد السكر|🧊 قدّمه~Watermelon
+عصاير~كوكتيل فواكه~🍹~10~1~خليط فواكه بالعصير واللبن.~مانجا،فراولة،موز،لبن،ثلج~🍓 قطّع الفاكهة|🌀 اخلطها|🥛 زوّد اللبن|🍹 قدّم~Smoothie
+مشروبات~خروب~🥤~20~1~مشروب بارد من الخروب المنقوع.~خروب،سكر،ماء،ثلج~💧 انقع الخروب|🔥 اغليه|🥄 صفّيه|🧊 برّده~Carob
+مشروبات ساخنة~شاي بلبن~🥛~10~1~شاي مع لبن بيتشرب الصبح.~شاي،لبن،سكر،ماء~💧 اغلي الماء|🍃 زوّد الشاي|🥛 زوّد اللبن|☕ صفّيه~Milk tea
+مشروبات ساخنة~شاي أخضر~🍵~5~1~شاي أخضر خفيف.~شاي أخضر،ماء ساخن،عسل~💧 سخّن الماء|🍃 زوّد الشاي|⏳ سيبه 3 دقايق|🍯 زوّد العسل~Green tea
+مشروبات ساخنة~حلبة~🌾~15~1~مشروب سخن من بذور الحلبة.~حلبة،ماء،عسل،قرفة~💧 اغلي الماء|🌾 زوّد الحلبة|⏳ سيبها تتسوّى|🍯 صفّيها~Fenugreek
+مشروبات ساخنة~قرفة باللبن~🥛~10~1~لبن ساخن بالقرفة والعسل.~لبن،قرفة،عسل~🥛 سخّن اللبن|🍂 زوّد القرفة|🍯 زوّد العسل|☕ قدّمه~Cinnamon
+مشروبات ساخنة~شوكولاتة ساخنة~🍫~10~1~لبن ساخن بالكاكاو.~لبن،كاكاو،سكر،كريمة~🥛 سخّن اللبن|🍫 زوّد الكاكاو|🥄 قلّب|☕ قدّمه~Hot chocolate
+مشروبات ساخنة~زهورات~🌼~10~1~خليط أعشاب مريح بالنعناع والينسون والبابونج.~زهورات،ماء،عسل~💧 اغلي الماء|🌼 زوّد الأعشاب|⏳ سيبها|🍯 زوّد العسل~Herbal tea
+قهوة~نسكافيه~☕~5~1~قهوة سريعة بالماء السخن أو اللبن.~نسكافيه،سكر،لبن~💧 سخّن الماء|☕ زوّد النسكافيه|🥛 زوّد اللبن|🥄 قلّب~Instant coffee
+قهوة~كابتشينو~☕~10~2~إسبريسو برغوة لبن كثيفة.~إسبريسو،لبن،رغوة~☕ حضّر الإسبريسو|🥛 سخّن اللبن|🫧 اعمل الرغوة|🥄 صبّ~Cappuccino
+قهوة~لاتيه~🥛~10~2~إسبريسو بلبن كتير ورغوة خفيفة.~إسبريسو،لبن~☕ حضّر الإسبريسو|🥛 سخّن اللبن|🥄 صبّ|🎨 زيّن~Caffè latte
+قهوة~آيس كوفي~🧊~5~1~قهوة باردة بالتلج واللبن.~قهوة،لبن،سكر،ثلج~☕ حضّر القهوة|❄️ برّدها|🥛 زوّد اللبن|🧊 زوّد الثلج~Iced coffee
+قهوة~فرابيه~🥤~10~1~قهوة باردة مضروبة برغوة.~نسكافيه،لبن،سكر،ثلج~🥄 اخفق النسكافيه|🥛 زوّد اللبن|🧊 زوّد الثلج|🥤 قدّم~Frappé coffee
+قهوة~موكا~🍫~10~2~قهوة بالشوكولاتة واللبن.~إسبريسو،شوكولاتة،لبن،كريمة~☕ حضّر الإسبريسو|🍫 زوّد الشوكولاتة|🥛 زوّد اللبن|🥄 قدّم~Caffè mocha
+مشروبات باردة~ميلك شيك~🥤~10~1~لبن وآيس كريم مضروبين.~لبن،آيس كريم،سكر~🍨 حط الآيس كريم|🥛 زوّد اللبن|🌀 اخلط|🥤 قدّم~Milkshake
+مشروبات باردة~موهيتو~🍹~5~1~ليمون ونعناع وصودا.~ليمون،نعناع،صودا،ثلج،سكر~🍋 اهرس الليمون والنعناع|🍬 زوّد السكر|🧊 زوّد الثلج|🥤 زوّد الصودا~Mojito
+مشروبات باردة~عيران~🥛~5~1~زبادي بارد ومملّح.~زبادي،ماء،ملح،ثلج~🥛 حط الزبادي|💧 زوّد الماء|🧂 زوّد الملح|🧊 اخلط~Ayran`.split("\n").forEach(l=>{const a=l.split("~");D.push(["",a[1],a[2],a[0],"",+a[3],+a[4],a[5],a[6],a[7],"","","en:"+a[8]])});
+const R=D.map(a=>({w:a[0],n:a[1],e:a[2],c:a[3],y:a[4],t:a[5],l:a[6],s:a[7],ing:a[8].split("،"),st:a[9].split("|").map(z=>{const i=z.indexOf(" ");return[z.slice(0,i),z.slice(i+1)]}),ks:a[10].split("|"),en:a[11],p:a[12]}));
+const LV=["","سهل","متوسط","صعب"];
+const $=s=>document.querySelector(s),AR="https://ar.wikipedia.org/w/api.php",EN="https://en.wikipedia.org/w/api.php",CM="https://commons.wikimedia.org/w/api.php";
+const api=(b,p)=>fetch(b+"?"+new URLSearchParams({format:"json",origin:"*",...p})).then(r=>r.json());
+const NEG=/\b(sisi|sissi|president|minister|politic\w*|mubarak|nasser|sadat|general|army|military|police|summit|meeting|ceremony|visit|conference|election|protest|portrait|king|queen|prince|sheikh|ambassador|embassy|football|player|actor|actress|singer|film|movie|poster|album|logo|map|flag|icon|diagram|chart|stamp|cover|menu|sign|vector|painting|drawing|building|mosque|church|statue|pyramids?|street|city|crowd|people|man|men|woman|women|girl|boy|child|children|abdel|abdul)\b/i;
+const FOOD=/food|dish|cuisine|meal|dessert|sweet|bread|soup|snack|breakfast|beverage|drink|juice|cooking|recipe|pastr|cake|cookie|biscuit|rice|bean|meat|fish|seafood|sausage|salad|pickle|stew|sauce|plate|bowl|served|fried|baked|grilled|stuffed|egg|cheese|pie\b|sandwich|liver|pigeon|lentil|okra|eggplant|halva|baklava|falafel|koshari/i;
+const memo={};
+const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let fav=new Set(store.get("fav",[]));
+const bad=new Set(store.get("bad",[]));
+// صور من كومنز: لازم اسم الصورة أو وصفها يطابق اسم الأكلة، ونفضّل الصور اللي فيها "مصر"
+async function commons(q,re){
+  try{const j=await api(CM,{action:"query",generator:"search",gsrnamespace:6,gsrsearch:q,gsrlimit:40,prop:"imageinfo|categories",cllimit:"max",iiprop:"url|mime|size|extmetadata",iiurlwidth:700,iiextmetadatafilter:"ImageDescription"});
+  return Object.values(j.query?.pages||{}).sort((a,b)=>a.index-b.index).filter(p=>{const i=p.imageinfo?.[0];if(!i||!/jpeg|png/.test(i.mime)||i.width<500||i.height<350)return false;
+    const t=(p.title+" "+(i.extmetadata?.ImageDescription?.value||"")+" "+(p.categories||[]).map(c=>c.title).join(" ")).replace(/<[^>]+>/g," ");
+    return !NEG.test(t)&&re.test(t)&&FOOD.test(t)}).map(p=>p.imageinfo[0].thumburl)}catch(e){return[]}
+}
+async function wiki(b,t){try{const j=await api(b,{action:"query",titles:t,redirects:1,prop:"pageimages|extracts",piprop:"thumbnail",pithumbsize:800,exintro:1,explaintext:1});
+  const p=Object.values(j.query.pages)[0];return{img:p.thumbnail?.source,extract:p.extract,url:p.pageid?b.replace("/w/api.php","")+"/wiki/"+encodeURIComponent(p.title):null}}catch(e){return{}}}
+function info(x){if(x.img)return Promise.resolve({imgs:[x.img],extract:"",url:null});const k=x.n+"|"+x.w;return memo[k]||(memo[k]=(async()=>{
+  let img=null,extract="",url=null;
+  if(x.p)for(const c of x.p.split("|")){if(img)break;if(c.startsWith("f:"))img="https://commons.wikimedia.org/wiki/Special:FilePath/"+encodeURIComponent(c.slice(2))+"?width=700";else img=(await wiki(EN,c.slice(3))).img}
+  if(x.w){const ar=await wiki(AR,x.w);extract=ar.extract||"";url=ar.url;if(!img)img=ar.img}
+  if(!img&&x.en)img=(await wiki(EN,x.en)).img;
+  return{imgs:img&&!bad.has(img)?[img]:[],extract,url}})())}
+const io=new IntersectionObserver(es=>es.forEach(async e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const x=R[e.target.dataset.i],r=await info(x),box=e.target.querySelector(".im");
+  if(r.imgs[0]&&box)box.innerHTML=`<img alt="${x.n}" src="${r.imgs[0]}" onerror="this.parentNode.textContent='${x.e}'">`}),{rootMargin:"250px"});
+function lazy(){paintRT();document.querySelectorAll(".card[data-i]").forEach(c=>io.observe(c))}
+// الأقسام: أكلات / مشروبات / حلويات
+const isD=x=>/^(مشروبات|عصاير|قهوة)/.test(x.c),isS=x=>x.c.startsWith("حلويات"),pageOf=x=>isD(x)?"drinks":isS(x)?"desserts":"foods";
+const PG={
+ foods:{t:"الأكلات",e:"🍲",d:"من الفطار للغدا للعشا: أطباق رئيسية ومشويات ومخبوزات وشوربة ومقبلات.",g:"linear-gradient(135deg,#ff6a3d,#ff9a3d)",f:x=>!isD(x)&&!isS(x),u:"أكلة"},
+ drinks:{t:"المشروبات",e:"🥤",d:"عصاير ومشروبات رمضان والشاي والقهوة.",g:"linear-gradient(135deg,#007f8c,#2fd6a0)",f:isD,u:"مشروب"},
+ desserts:{t:"الحلويات",e:"🍰",d:"كنافة وبسبوسة وأم علي وكل الحاجات الحلوة.",g:"linear-gradient(135deg,#e0457b,#ff8fab)",f:isS,u:"حلوى"},
+ fav:{t:"المفضلة",e:"♥",d:"الأكلات اللي حبيتها. دوس ♥ على أي كارت عشان تضيفه هنا.",g:"linear-gradient(135deg,#7b4bdb,#b06bff)",f:(x,i)=>fav.has(i)},
+ s:{t:"نتايج البحث",e:"✨",d:"نتايج من كل الأقسام.",g:"linear-gradient(135deg,#007f8c,#00b3a4)",f:()=>true},
+ ramadan:{t:"أكلات رمضان",e:"🌙",d:"سفرة رمضان: كنافة وقطايف وسوبيا وقمر الدين.",g:"linear-gradient(135deg,#2b2d6e,#6a4bb5)",f:x=>/رمضان/.test(x.y+x.s),u:"أكلة"},
+ eid:{t:"أكلات العيد",e:"🐑",d:"فتة وكحك ولمّة العيد.",g:"linear-gradient(135deg,#e07b1a,#ffc83d)",f:x=>/عيد|أعياد|كحك/.test(x.y+x.s+x.n),u:"أكلة"},
+ spring:{t:"شم النسيم",e:"🌸",d:"فسيخ وبيض ملوّن وخس وبصل أخضر.",g:"linear-gradient(135deg,#2fa36b,#9be15d)",f:x=>x.c=="مواسم"||/شم النسيم/.test(x.s),u:"أكلة"},
+ fr:{t:"في التلاجة إيه؟",e:"🧊",d:"اكتب المكونات اللي عندك، مفصولة بمسافة أو فاصلة، وهنطلعلك الأكلات اللي تنفع.",g:"linear-gradient(135deg,#0a7fb5,#4fd1e8)",f:()=>true,u:"أكلة"}
+};
+let pg="foods",cat="الكل",sq="";
+const pick=k=>R.filter((x,i)=>PG[k].f(x,i)&&(x.en||x.p)).slice(0,3);
+function cu(e,n){let i=0;const t=setInterval(()=>{e.textContent=Math.round(n*++i/25);if(i>=25)clearInterval(t)},40)}
+function fillImgs(sel,items){const els=[...document.querySelectorAll(sel)];items.forEach(async(x,k)=>{const r=await info(x);if(r.imgs[0]&&els[k])els[k].innerHTML=`<img alt="" src="${r.imgs[0]}" onerror="this.parentNode.textContent='${x.e}'">`})}
+const cnt=k=>R.filter((x,i)=>PG[k].f(x,i)).length;
+cu($("#n1"),cnt("foods"));cu($("#n2"),cnt("drinks"));cu($("#n3"),cnt("desserts"));
+$("#tiles").innerHTML=["foods","drinks","desserts"].map(k=>{const P=PG[k],it=R.filter((x,i)=>P.f(x,i));
+  return`<a class="tile" href="#/${k}" style="background:${P.g}"><span class="te">${P.e}</span><h3>${P.t}</h3><p>${P.d}</p><div class="mos">${pick(k).map(x=>`<div>${x.e}</div>`).join("")}</div><span class="go">${it.length} ${P.u} · تصفّح ←</span></a>`}).join("");
+["foods","drinks","desserts"].forEach(k=>fillImgs(`.tile[href="#/${k}"] .mos div`,pick(k)));
+$("#sug").innerHTML="جرّب: "+["كشري","كنافة","شاي","سمك","مانجا","قهوة","فراخ"].map(s=>`<span>${s}</span>`).join("");
+$("#sug").onclick=e=>{if(e.target.tagName=="SPAN")location.hash="#/s/"+encodeURIComponent(e.target.textContent)};
+$("#sb").onclick=()=>{const q=$("#q").value.trim();location.hash=q?"#/s/"+encodeURIComponent(q):"#/foods"};
+$("#q").onkeydown=e=>{if(e.key=="Enter")$("#sb").click()};
+$("#lq").oninput=render;$("#so").onchange=$("#lv").onchange=$("#dt").onchange=render;
+$("#rnd").onclick=()=>{location.hash="#/d/"+Math.floor(Math.random()*R.length)};
+$("#dk").onclick=()=>{const d=document.documentElement.dataset.t=="d";document.documentElement.dataset.t=d?"":"d";$("#dk").textContent=d?"🌙 ليلي":"☀️ نهاري";store.set("t",d?"":"d")};
+if(store.get("t","")=="d"){document.documentElement.dataset.t="d";$("#dk").textContent="☀️ نهاري"}
+const norm=s=>s.replace(/[\u064B-\u065F]/g,"").replace(/[أإآ]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي");
+function tf(i){fav.has(i)?fav.delete(i):fav.add(i);store.set("fav",[...fav]);$("#fc").textContent=fav.size;document.querySelectorAll(`.hrt[data-h="${i}"]`).forEach(b=>b.classList.toggle("on",fav.has(i)));if(location.hash=="#/fav")render()}
+$("#fc").textContent=fav.size;
+function card(x,i,k){return`<div class="card" data-i="${i}" style="animation-delay:${k*.04}s" onclick="location.hash='#/d/${i}'"><span class="badge">${x.c}</span>
+ <button class="hrt ${fav.has(i)?"on":""}" data-h="${i}" onclick="event.stopPropagation();tf(${i})">♥</button><div class="im">${x.e}</div>
+ <div class="tx"><h3>${x.n}</h3><div class="meta"><span>⏱ ${x.t} دقيقة</span><span>👨‍🍳 ${LV[x.l]}</span><span data-rk="${key(x)}"></span></div></div></div>`}
+function openList(p,q){pg=p;sq=q||"";cat="الكل";$("#lq").value=sq;$("#so").value=0;$("#lv").value=0;$("#dt").value=0;$("#lq").placeholder=p=="fr"?"اكتب اللي عندك: رز بصل طماطم...":"ابحث في القسم ده...";
+  const cs=[...new Set(R.filter((x,i)=>PG[p].f(x,i)).map(x=>x.c))];
+  $("#cats").innerHTML=cs.length>1?["الكل",...cs].map(c=>`<button class="chip ${c==cat?"on":""}" data-c="${c}">${c}</button>`).join(""):"";
+  render()}
+$("#cats").onclick=e=>{if(e.target.dataset.c){cat=e.target.dataset.c;document.querySelectorAll("#cats .chip").forEach(b=>b.classList.toggle("on",b.dataset.c==cat));render()}};
+function render(){
+  const P=PG[pg],raw=$("#lq").value.trim(),q=norm(raw),so=+$("#so").value;
+  const tk=pg=="fr"?q.split(/[،,\s]+/).filter(Boolean):0,sc=x=>tk.filter(t=>norm(x.ing.join(" ")+x.n).includes(t)).length;let L=R.map((x,i)=>({x,i})).filter(({x,i})=>P.f(x,i)&&(cat=="الكل"||x.c==cat)&&(!+$("#lv").value||x.l==+$("#lv").value)&&dietOk(x,+$("#dt").value)&&(!q||(tk?sc(x)>0:norm(x.n+x.s+x.c+x.ing.join(" ")).includes(q))));
+  if(so==0)L.sort((a,b)=>a.x.n.localeCompare(b.x.n,"ar"));if(so==1)L.sort((a,b)=>a.x.t-b.x.t);if(so==2)L.sort((a,b)=>a.x.l-b.x.l);if(tk)L.sort((a,b)=>sc(b.x)-sc(a.x));
+  $("#ph").style.background=P.g;
+  $("#ph").innerHTML=`<h1>${P.e} ${pg=="s"?`نتايج «${sq}»`:P.t}</h1><p>${P.d}</p><span class="cnt">${L.length} ${pg=="s"||pg=="fav"?"عنصر":P.u}</span>`;
+  $("#fc").textContent=fav.size;
+  $("#grid").innerHTML=L.map(({x,i},k)=>card(x,i,k)).join("")||`<div class="empty">${pg=="fav"?"مفيش مفضلة لسه ♥":"😅 مفيش حاجة بالاسم ده في القسم ده."}${raw&&pg!="fav"?'<br><button class="wsr" onclick="wsearch()">دوّر عليها في ويكيبيديا</button>':""}</div>`;
+  const bi=L.map(o=>o.x).filter(x=>x.en||x.p).slice(0,5);
+  $("#ph").insertAdjacentHTML("beforeend",`<div class="ban">${bi.map((x,k)=>`<div style="animation-delay:${-k}s">${x.e}</div>`).join("")}</div>`);fillImgs("#ph .ban div",bi);
+  lazy();
+}
+async function wsearch(){
+  const q=$("#lq").value.trim();$("#grid").innerHTML='<div class="empty">⏳ بدوّر...</div>';
+  try{const j=await api(AR,{action:"query",generator:"search",gsrsearch:q+" أكلة",gsrlimit:12,prop:"pageimages|extracts",piprop:"thumbnail",pithumbsize:500,exintro:1,explaintext:1,exchars:110});
+   const P=Object.values(j.query?.pages||{}).sort((a,b)=>a.index-b.index);
+   $("#grid").innerHTML=P.map((p,k)=>`<div class="card" style="animation-delay:${k*.05}s" onclick="location.hash='#/w/${encodeURIComponent(p.title)}'"><span class="badge">ويكيبيديا</span><div class="im">${p.thumbnail?`<img src="${p.thumbnail.source}" alt="">`:"🍽️"}</div><div class="tx"><h3>${p.title}</h3><div class="meta">${p.extract||""}</div></div></div>`).join("")||'<div class="empty">ملقيناش حاجة 🙁</div>';
+  }catch(e){$("#grid").innerHTML='<div class="empty">حصلت مشكلة في الاتصال، جرّب تاني 🙏</div>'}
+}
+// صفحة الأكلة
+let timer,LB=[],li=0;
+function lbo(i){li=i;$("#lb img").src=LB[li];$("#lb").style.display="grid"}
+function lbm(d){li=(li+d+LB.length)%LB.length;$("#lb img").src=LB[li]}
+$("#lb").onclick=e=>{if(e.target.tagName!="BUTTON"&&e.target.tagName!="IMG")$("#lb").style.display="none"};
+addEventListener("keydown",e=>{if($("#lb").style.display=="grid"){if(e.key=="Escape")$("#lb").style.display="none";if(e.key=="ArrowLeft")lbm(1);if(e.key=="ArrowRight")lbm(-1)}});
+async function show(x,idx){
+  clearInterval(timer);un.forEach(f=>f());un=[];const isR=idx!=null;
+  const pp=isR?pageOf(x):null;let nb='<a href="#/">→ رجوع</a>';
+  if(isR){const pl=R.map((y,i)=>i).filter(i=>pageOf(R[i])==pp),pos=pl.indexOf(idx);nb=`<a href="#/${pp}">→ ${PG[pp].t}</a><a href="#/d/${pl[(pos-1+pl.length)%pl.length]}">قبلها</a><a href="#/d/${pl[(pos+1)%pl.length]}">بعدها</a>`}
+  $("#topb").innerHTML=nb+`<button id="dk2" onclick="$('#dk').click()">🌙 / ☀️</button>`;
+  $("#dbody").innerHTML=`
+  <div class="dh"><div class="big" id="big">${x.e||"🍽️"}</div><div>
+    <h1>${x.n}</h1><div class="facts">${x.c?`<span>📂 ${x.c}</span>`:""}${x.y?`<span>📅 ${x.y}</span>`:""}${x.t?`<span>⏱ ${x.t} دقيقة</span><span>👨‍🍳 ${LV[x.l]}</span>`:""}</div>
+    ${x.s?`<p>${x.s}</p>`:""}${isR?`<div class="stars" id="stars">${[1,2,3,4,5].map(n=>`<b data-n="${n}">★</b>`).join("")}<small id="avg" style="color:var(--mut);margin-right:8px"></small></div>`:""}
+    <div class="acts">${isR?`<button class="chip ${fav.has(idx)?"on":""}" id="fb" onclick="tf(${idx});this.classList.toggle('on')">♥ مفضلة</button>`:""}
+    ${x.st?'<button class="chip on" id="ckb">👨‍🍳 وضع الطبخ</button>':""}<button class="chip" id="bb" style="display:none">🚫 الصورة غلط؟ شيلها</button><button class="chip" id="shr">🔗 انسخ الرابط</button><a class="chip" target="_blank" style="text-decoration:none" href="https://wa.me/?text=${encodeURIComponent(x.n+" "+location.href)}">💬 واتساب</a><button class="chip" onclick="print()">🖨️ اطبع</button>${isR?'<button class="chip" id="edb">✏️ تعديل</button>':""}
+    <a class="chip" id="wl" target="_blank" href="https://ar.wikipedia.org/wiki/${encodeURIComponent(x.w)}" style="text-decoration:none">ويكيبيديا ↗</a></div></div></div>
+  ${x.ing?`<div class="box"><h2>🧂 بتتعمل من إيه؟ <small style="font-size:14px;color:var(--mut)">(دوس على المكوّن عشان تشطبه)</small></h2><div class="ings" id="ings">${x.ing.map((g,k)=>`<span class="ing" style="animation-delay:${k*.12}s">${g}</span>`).join("")}</div><button class="chip on" id="adl" style="margin-top:14px">🛒 ضيف اللي ناقصني للقايمة</button></div>
+  <div class="box"><h2>🎬 بتتعمل إزاي؟</h2><div class="player"><div class="stage"><span id="st"></span></div>
+   <div><div class="steps" id="steps">${x.st.map((s,k)=>`<div data-k="${k}">${k+1}. ${s[1]}</div>`).join("")}</div><div class="pb"><i id="pb"></i></div><button class="chip" id="pp">⏸ وقّف</button></div></div></div>`:""}
+  <div class="box" id="wb"><h2>🌍 من ويكيبيديا</h2><p class="ex" id="ex">ثانية واحدة، بنجيب المعلومات...</p></div>
+  ${isR?`<div class="box"><h2>💬 آراء الناس</h2><div id="cm"></div><div class="cf"><input id="cn" placeholder="اسمك" maxlength="30"><textarea id="ct" rows="3" maxlength="500" placeholder="اكتب رأيك في الأكلة..."></textarea><button class="chip on" id="cs">انشر رأيك</button></div></div>`:""}
+  ${isR?`<h2 style="margin:10px 0 16px">ممكن يعجبك كمان</h2><div class="grid" id="rel"></div>`:""}`;
+  $("#ings")&&($("#ings").onclick=e=>e.target.classList.contains("ing")&&e.target.classList.toggle("done"));
+  $("#shr").onclick=async e=>{try{await navigator.clipboard.writeText(location.href);e.target.textContent="اتنسخ ✓"}catch(_){e.target.textContent="انسخه من العنوان"}};
+  $("#ckb")&&($("#ckb").onclick=()=>cook(x));$("#edb")&&($("#edb").onclick=()=>auth(()=>editForm(idx)));
+  $("#adl")&&($("#adl").onclick=()=>{const a=[...document.querySelectorAll("#ings .ing:not(.done)")].map(e=>e.textContent);SL=[...new Set([...SL,...a])];store.set("sl",SL);slc();slOpen()});
+  if(isR){const k=key(x);let mine=0,av=0,n=0;const pt=()=>{document.querySelectorAll("#stars b").forEach(b=>b.classList.toggle("on",+b.dataset.n<=(mine||Math.round(av))));$("#avg").textContent=n?`${av.toFixed(1)} من ${n} تقييم`+(mine?` · تقييمك ${mine}`:""):"كُن أول من يقيّم"};pt();
+   if(window.FB){$("#stars").onclick=e=>e.target.dataset.n&&FB.rate(k,+e.target.dataset.n);
+    un.push(FB.onRatings(k,(m,a,c)=>{mine=m;av=a;n=c;pt()}));
+    un.push(FB.onComments(k,L=>{const cl=$("#cm");if(!cl)return;cl.textContent="";[...L].reverse().forEach(c=>{const d=document.createElement("div");d.className="cmt";const h=document.createElement("b");h.textContent=c.name+" · "+new Date(c.ts).toLocaleDateString("ar-EG");const p=document.createElement("p");p.textContent=c.text;d.append(h,p);if(c.uid==FB.uid()){const b=document.createElement("button");b.textContent="🗑";b.onclick=()=>FB.delComment(k,c.id);d.append(b)}cl.append(d)});if(!L.length)cl.textContent="لسه مفيش آراء، اكتب أول رأي 😊"}));
+    $("#cn").value=store.get("nm","");$("#cs").onclick=async()=>{const nm=$("#cn").value.trim()||"زائر",tx=$("#ct").value.trim();if(!tx)return;store.set("nm",nm);await FB.comment(k,nm,tx);$("#ct").value=""};
+    if(x.k&&x.uid==FB.uid()){const b=document.createElement("button");b.className="chip";b.textContent="🗑 احذف وصفتي";b.onclick=async()=>{if(confirm("متأكد؟")){await FB.delRecipe(x.k.slice(2));location.hash="#/"}};document.querySelector(".acts").append(b)}}
+   else $("#cm").textContent="الاتصال بـ Firebase لسه مجاش..."}
+  if(isR){const rel=R.map((y,i)=>({y,i})).filter(o=>o.i!=idx&&pageOf(o.y)==pp).sort((a,b)=>(b.y.c==x.c)-(a.y.c==x.c)).slice(0,4);$("#rel").innerHTML=rel.map((o,k)=>card(o.y,o.i,k)).join("");lazy()}
+  if(x.st){let k=0,run=true,t=0;const DUR=3000,T=50;
+    const go=n=>{k=n;t=0;const s=$("#st");if(!s)return;s.style.animation="none";s.offsetWidth;s.style.animation="";s.textContent=x.st[k][0];document.querySelectorAll("#steps div").forEach((d,j)=>d.classList.toggle("on",j==k))};
+    go(0);timer=setInterval(()=>{if(!run)return;t+=T;const b=$("#pb");if(b)b.style.width=t/DUR*100+"%";if(t>=DUR)go((k+1)%x.st.length)},T);
+    $("#steps").onclick=e=>{if(e.target.dataset.k)go(+e.target.dataset.k)};
+    $("#pp").onclick=e=>{run=!run;e.target.textContent=run?"⏸ وقّف":"▶ شغّل"}}
+  const r=await info(x);if(!$("#big"))return;
+  if(r.extract)$("#ex").textContent=r.extract;else $("#wb").style.display="none";
+  if(r.url)$("#wl").href=r.url;if(!x.w)$("#wl").style.display="none";
+  const paint=()=>{LB=r.imgs;
+    if(r.imgs.length){$("#big").innerHTML=`<img src="${r.imgs[0]}" alt="${x.n}" onerror="this.parentNode.textContent='${x.e||"🍽️"}'">`;$("#big").onclick=()=>lbo(0);$("#bb").style.display="inline-block"}
+    else{$("#big").innerHTML=x.e||"🍽️";$("#big").onclick=null;$("#bb").style.display="none"}};
+  window.rb=i=>{const u=r.imgs[i];if(!u)return;bad.add(u);store.set("bad",[...bad]);r.imgs=[];paint()};
+  $("#bb").onclick=()=>rb(0);paint();
+}
+function route(){
+  const h=location.hash;let m,act="";clearInterval(timer);
+  const V=v=>{["home","listp","detail","chefp"].forEach(id=>$("#"+id).style.display=id==v?"block":"none");scrollTo(0,0)};
+  if(m=h.match(/^#\/d\/(\d+)/)){const x=R[+m[1]];if(!x){location.hash="#/";return}V("detail");act=pageOf(x);show(x,+m[1])}
+  else if(m=h.match(/^#\/w\/(.+)/)){const t=decodeURIComponent(m[1]);V("detail");show({w:t,n:t},null)}
+  else if(m=h.match(/^#\/s\/(.*)/)){V("listp");openList("s",decodeURIComponent(m[1]))}
+  else if(m=h.match(/^#\/(foods|drinks|desserts|fav|ramadan|eid|spring)$/)){V("listp");act=m[1];openList(m[1])}
+  else if(h=="#/fridge"){V("listp");act="fr";openList("fr")}
+  else if(h=="#/chef"){V("chefp");act="chef";chefOpen()}
+  else V("home");
+  document.querySelectorAll("#nv a").forEach(a=>a.classList.toggle("on",a.dataset.p==act));$("#fab").style.display=act=="chef"?"none":"flex";
+}
+const BASE=R.length;
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const key=x=>x.k||x.ok||x.n.replace(/[.#$\[\]\/]/g,"_");
+let un=[],RT={},SL=store.get("sl",[]),wl,ct;
+const MEAT=/لحم|فراخ|كبدة|حمام|سمك|بلطي|بوري|قاروص|دنيس|موسى|سردين|جمبري|سبيط|كفتة|ممبار|سجق|بسطرمة|ضاني|كباب|شاورما|كابوريا/,ANI=/لبن|جبنة|بيض|زبادي|قشطة|سمنة|زبدة|كريمة|كاسترد/;
+const dietOk=(x,d)=>{const t=x.n+" "+x.ing.join(" ");return !d||(d==1?!MEAT.test(t):!MEAT.test(t)&&!ANI.test(t))};
+function paintRT(){document.querySelectorAll("[data-rk]").forEach(e=>{const v=RT[e.dataset.rk];e.textContent=v?`⭐ ${v[0].toFixed(1)} (${v[1]})`:""})}
+const slc=()=>$("#slc").textContent=SL.length;slc();
+function modal(h,c){$("#md").innerHTML=`<div class="mc ${c||''}"><button class="x" onclick="mdc()">✕</button>${h}</div>`;$("#md").style.display="grid"}
+window.mdc=()=>$("#md").style.display="none";$("#md").onclick=e=>{if(e.target.id=="md")mdc()};
+function slOpen(){modal(`<h2>🛒 قايمة المشتريات</h2><p style="color:var(--mut);font-size:14px">دوس على أي عنصر عشان تشيله</p><div id="sli">${SL.map((g,i)=>`<div class="sli" data-i="${i}">${esc(g)}</div>`).join("")||"القايمة فاضية 🙂"}</div><div class="acts"><button class="chip" id="slcp">📋 انسخ</button><a class="chip" target="_blank" style="text-decoration:none" href="https://wa.me/?text=${encodeURIComponent("🛒 قايمة المشتريات:\n"+SL.map(g=>"• "+g).join("\n"))}">💬 واتساب</a><button class="chip" id="slx">🗑 امسح الكل</button></div>`);
+ $("#sli").onclick=e=>{const i=e.target.dataset.i;if(i!=null){SL.splice(+i,1);store.set("sl",SL);slc();slOpen()}};
+ $("#slcp").onclick=e=>navigator.clipboard.writeText(SL.join("\n")).then(()=>e.target.textContent="اتنسخت ✓");
+ $("#slx").onclick=()=>{SL=[];store.set("sl",SL);slc();slOpen()}}
+$("#slb").onclick=slOpen;
+const tmin=t=>{let m=t.match(/(\d+)\s*(دقيق|دقايق|ساع)/);if(m)return m[2]=="ساع"?m[1]*60:+m[1];return /ساعتين/.test(t)?120:/ساعة/.test(t)?60:/دقيقتين/.test(t)?2:0};
+function beep(){try{const a=new AudioContext(),o=a.createOscillator();o.connect(a.destination);o.frequency.value=880;o.start();setTimeout(()=>o.stop(),900)}catch(e){}navigator.vibrate&&navigator.vibrate([300,150,300])}
+async function cook(x){let k=0;try{wl=await navigator.wakeLock.request("screen")}catch(e){}
+ const el=$("#ck");el.style.display="flex";
+ const draw=()=>{clearInterval(ct);const s=x.st[k],m=tmin(s[1])||5;el.innerHTML=`<button class="x2" onclick="ckc()">✕ اقفل</button><small>خطوة ${k+1} من ${x.st.length}</small><div class="ce">${s[0]}</div><p>${s[1]}</p><button class="chip on" id="tm">⏲ تايمر ${m} دقيقة</button><div class="cn"><button onclick="ckm(-1)">→ السابقة</button><button onclick="ckm(1)">التالية ←</button></div>`;
+  const b=$("#tm");b.onclick=()=>{clearInterval(ct);let t=m*60;const f=()=>{b.textContent="⏳ "+Math.floor(t/60)+":"+String(t%60).padStart(2,"0");if(t--<=0){clearInterval(ct);b.textContent="✅ خلصت!";beep()}};f();ct=setInterval(f,1000)}};
+ window.ckm=d=>{k=Math.min(x.st.length-1,Math.max(0,k+d));draw()};draw()}
+window.ckc=()=>{clearInterval(ct);$("#ck").style.display="none";wl&&wl.release&&wl.release()};
+const CATS={"🍲 أكلة":["رئيسي","فطار","مشويات","شوربة ومقبلات","مخبوزات","مواسم"],"🥤 مشروب":["عصاير","مشروبات ساخنة","قهوة","مشروبات باردة","مشروبات"],"🍰 حلوى":["حلويات"]};
+const imgc=f=>new Promise(res=>{if(!f)return res("");const r=new FileReader();r.onload=()=>{const i=new Image();i.onload=()=>{const s=Math.min(1,700/Math.max(i.width,i.height)),c=document.createElement("canvas");c.width=i.width*s;c.height=i.height*s;c.getContext("2d").drawImage(i,0,0,c.width,c.height);res(c.toDataURL("image/jpeg",.72))};i.onerror=()=>res("");i.src=r.result};r.readAsDataURL(f)});
+function addForm(){if(!window.FB)return alert("لسه بيتصل بالسيرفر، جرّب كمان ثانية");
+ modal(`<h2>➕ أضف وصفتك</h2><select id="fk">${Object.keys(CATS).map(k=>`<option>${k}</option>`).join("")}</select><select id="fc2"></select><input id="fn" placeholder="اسم الأكلة / المشروب" maxlength="60"><input id="fe" placeholder="إيموجي (اختياري) 🍲" maxlength="4"><input id="ft" type="number" min="1" max="1440" placeholder="الوقت بالدقايق"><select id="fl"><option value="1">سهل</option><option value="2">متوسط</option><option value="3">صعب</option></select><textarea id="fs" rows="2" maxlength="300" placeholder="نبذة قصيرة"></textarea><textarea id="fi" rows="4" placeholder="المكونات (كل مكوّن في سطر)"></textarea><textarea id="fp" rows="5" placeholder="طريقة التحضير (كل خطوة في سطر)"></textarea><label>📷 صورة <input id="ff" type="file" accept="image/*"></label><button class="chip on" id="fgo">نشر</button><p id="fm"></p>`);
+ const cs=()=>$("#fc2").innerHTML=CATS[$("#fk").value].map(c=>`<option>${c}</option>`).join("");cs();$("#fk").onchange=cs;
+ $("#fgo").onclick=async()=>{const n=$("#fn").value.trim(),ing=$("#fi").value.split("\n").map(z=>z.trim()).filter(Boolean).slice(0,30),st=$("#fp").value.split("\n").map(z=>z.trim()).filter(Boolean).slice(0,30);
+  if(!n||!ing.length||!st.length||!+$("#ft").value){$("#fm").textContent="⚠️ الاسم والوقت والمكونات والخطوات مطلوبين";return}
+  $("#fm").textContent="⏳ بننشر...";const img=await imgc($("#ff").files[0]);
+  const o={n,c:$("#fc2").value,t:+$("#ft").value,l:+$("#fl").value,s:$("#fs").value.trim()||" ",ing,st,name:store.get("nm","زائر")};const e=$("#fe").value.trim();if(e)o.e=e;if(img)o.img=img;
+  try{await FB.addRecipe(o);$("#fm").textContent="✅ اتنشرت! شكراً";setTimeout(mdc,1200)}catch(err){$("#fm").textContent="❌ فشل النشر: "+err.message}}}
+$("#addb").onclick=addForm;
+addEventListener("fbratings",e=>{RT=e.detail;paintRT()});
+addEventListener("fbready",()=>{if(/^#\/d\//.test(location.hash))route()});
+addEventListener("fbrecipes",e=>{R.length=BASE;e.detail.forEach(u=>R.push({w:"",n:esc(u.n),e:esc(u.e||"🍽️"),c:esc(u.c),y:"من إضافة "+esc(u.name),t:+u.t||0,l:+u.l||1,s:esc(u.s||""),ing:(u.ing||[]).map(esc),st:(u.st||[]).map((z,i)=>[["🥣","🔪","🔥","🍽️"][i%4],esc(z)]),ks:[],en:"",p:"",k:"u_"+u.id,uid:u.uid,img:/^data:image\/jpeg;base64,[A-Za-z0-9+\/=]+$/.test(u.img||"")?u.img:""}));
+ cu($("#n1"),cnt("foods"));cu($("#n2"),cnt("drinks"));cu($("#n3"),cnt("desserts"));if($("#listp").style.display=="block")render()});
+$("#now").onclick=()=>{const h=new Date().getHours(),C=h<11?["فطار"]:h<17?["رئيسي","مشويات"]:h<22?["شوربة ومقبلات","مشويات","حلويات"]:["مشروبات ساخنة","قهوة","حلويات"];const L=R.map((x,i)=>i).filter(i=>C.includes(R[i].c));location.hash="#/d/"+L[Math.random()*L.length|0]};
+const dd=new Date().getDate();$("#pk").innerHTML=[0,1,2,3].map(k=>{const i=(dd*7+k*13)%R.length;return card(R[i],i,k)}).join("");lazy();
+addEventListener("scroll",()=>$("#up").classList.toggle("sh",scrollY>500));$("#up").onclick=()=>scrollTo({top:0,behavior:"smooth"});
+addEventListener("keydown",e=>{if(e.key=="/"&&!/INPUT|SELECT/.test(document.activeElement.tagName)){e.preventDefault();($("#listp").style.display=="block"?$("#lq"):$("#q")).focus()}});
+
+/* ===== v2: تعديل بباسورد + الشيف إيتو ===== */
+const AH=8497203730900053; // هاش الباسورد (الافتراضي: eto2026) — غيّره بالطريقة المكتوبة في الرد
+const h53=s=>{let a=0xdeadbeef,b=0x41c6ce57;for(let i=0,c;i<s.length;i++){c=s.charCodeAt(i);a=Math.imul(a^c,2654435761);b=Math.imul(b^c,1597334677)}a=Math.imul(a^a>>>16,2246822507)^Math.imul(b^b>>>13,3266489909);b=Math.imul(b^b>>>16,2246822507)^Math.imul(a^a>>>13,3266489909);return 4294967296*(2097151&b)+(a>>>0)};
+let OV=store.get("ov",{}),PEND={},AU=false;try{AU=sessionStorage.getItem("ea")=="1"}catch(e){}
+R.forEach(x=>x.ok=x.n);const ORIG=R.map(x=>JSON.stringify(x));
+function applyOv(){R.forEach((x,i)=>{if(i<BASE){delete x.img;Object.assign(x,JSON.parse(ORIG[i]))}const o=OV[key(x)];if(!o||!o.n)return;
+ Object.assign(x,{n:esc(o.n),e:esc(o.e||"🍽️"),c:esc(o.c),t:+o.t||x.t,l:+o.l||x.l,s:esc(o.s),ing:(o.ing||[]).map(esc),st:(o.st||[]).map(z=>[esc(z[0]),esc(z[1])])});
+ if(/^data:image\/(jpeg|png);base64,[A-Za-z0-9+\/=]+$/.test(o.img||""))x.img=o.img;
+ if(o.ni){x.img="";x.p="";x.en="";x.w=""}})}
+applyOv();
+let tt;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("sh");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("sh"),2600)}
+addEventListener("scroll",()=>{$("#pr").style.width=scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight)*100+"%"});
+addEventListener("keydown",e=>{if(e.key=="Escape")mdc()});
+function auth(cb){if(AU)return cb();
+ modal(`<div class="pw"><div class="lk">🔐</div><h2>منطقة الشيف</h2><p>اكتب الباسورد عشان تقدر تعدّل</p><input id="pwi" type="password" placeholder="••••••" autocomplete="off"><div class="er" id="pwe"></div><button class="chip on" id="pwg">دخول</button></div>`);
+ const go=()=>{if(h53($("#pwi").value)==AH){AU=true;try{sessionStorage.setItem("ea","1")}catch(e){}mdc();toast("أهلاً يا شيف 👨‍🍳");cb()}else{$("#pwe").textContent="❌ الباسورد غلط";const m=$("#md .mc");m.classList.remove("shk");void m.offsetWidth;m.classList.add("shk");$("#pwi").select()}};
+ $("#pwg").onclick=go;$("#pwi").onkeydown=e=>e.key=="Enter"&&go();setTimeout(()=>$("#pwi").focus(),60)}
+const DE=["🥣","🔪","🔥","🍽️"],lines=v=>v.split("\n").map(z=>z.trim()).filter(Boolean).slice(0,40);
+function editForm(i){const x=R[i];if(!x)return;const k=key(x),cats=[...new Set(R.map(y=>y.c))];
+ modal(`<h2>✏️ تعديل: ${x.n}</h2><label>الاسم</label><input id="en" value="${x.n}" maxlength="60">
+ <div class="row"><div><label>إيموجي</label><input id="ee" value="${x.e}" maxlength="8"></div><div><label>القسم</label><select id="ec">${cats.map(c=>`<option ${c==x.c?"selected":""}>${c}</option>`).join("")}</select></div></div>
+ <div class="row"><div><label>الوقت (دقيقة)</label><input id="et" type="number" min="1" value="${x.t}"></div><div><label>المستوى</label><select id="el">${[1,2,3].map(n=>`<option value="${n}" ${n==x.l?"selected":""}>${LV[n]}</option>`).join("")}</select></div></div>
+ <label>الوصف</label><textarea id="es" rows="3">${x.s}</textarea>
+ <label>المكونات (كل مكوّن في سطر)</label><textarea id="ei" rows="4">${x.ing.join("\n")}</textarea>
+ <label>طريقة التحضير (خطوة في كل سطر، ابدأها بإيموجي)</label><textarea id="ep" rows="5">${x.st.map(z=>z.join(" ")).join("\n")}</textarea>
+ <label>الصورة</label><div class="eimg">${x.img?`<img src="${x.img}" alt="">`:""}<input id="ef" type="file" accept="image/*"></div>
+ <label style="font-weight:600"><input type="checkbox" id="eni" style="width:auto"> بدون صورة (إيموجي بس)</label>
+ <div class="acts"><button class="chip on" id="esv">💾 حفظ</button><button class="chip" id="ers">↩️ رجّع الأصلي</button></div><div id="emg" style="font-weight:800"></div>`,"wide");
+ $("#esv").onclick=async()=>{const n=$("#en").value.trim();if(!n){$("#emg").textContent="⚠️ الاسم مطلوب";return}
+  const o={n,e:$("#ee").value.trim()||"🍽️",c:$("#ec").value,t:+$("#et").value||x.t,l:+$("#el").value,s:$("#es").value.trim(),ing:lines($("#ei").value),
+   st:lines($("#ep").value).map((z,j)=>{const m=z.match(/^(\S{1,8})\s+(.+)$/u);return m&&!/[\u0600-\u06FFa-zA-Z0-9]/.test(m[1])?[m[1],m[2]]:[DE[j%4],z]})};
+  if(!o.ing.length||!o.st.length){$("#emg").textContent="⚠️ المكونات والخطوات مطلوبين";return}
+  $("#emg").textContent="⏳ بيتحفظ...";const f=$("#ef").files[0];
+  if($("#eni").checked){o.ni=1;o.img=""}else if(f)o.img=await imgc(f);else if(OV[k]&&OV[k].img)o.img=OV[k].img;
+  OV[k]=o;store.set("ov",OV);try{await FB.setOv(k,o);delete PEND[k]}catch(e){PEND[k]=o;toast("اتحفظ عندك بس — افتح صلاحيات الكتابة في Firebase")}
+  applyOv();mdc();route();toast("اتحفظ ✓")};
+ $("#ers").onclick=async()=>{if(!confirm("ترجّع الأكلة لأصلها؟"))return;delete OV[k];delete PEND[k];store.set("ov",OV);try{await FB.delOv(k)}catch(e){}applyOv();mdc();route();toast("رجعت للأصل")}}
+addEventListener("fbov",e=>{OV={...e.detail,...PEND};store.set("ov",OV);applyOv();if($("#listp").style.display=="block")render();else if(/^#\/d\//.test(location.hash)&&$("#md").style.display!="grid")route()});
+addEventListener("fbrecipes",()=>{applyOv();if($("#listp").style.display=="block")render()});
+$("#tiles").insertAdjacentHTML("afterend",'<a class="chefb" href="#/chef"><span class="ce2">👨‍🍳</span><div><h3>الشيف إيتو</h3><p>بوت بيرد بالمصري: وصفات، مكونات، نصايح، وأكلة على مزاجك.</p></div></a>');
+/* ----- الشيف ----- */
+const rnd=a=>a[Math.floor(Math.random()*a.length)];let chefInit=0;
+function say(t,u){const d=document.createElement("div");d.className="m "+(u?"u":"b");u?d.textContent=t:d.innerHTML=t;$("#msgs").append(d);$("#msgs").scrollTop=1e9;return d}
+function chefOpen(){if(chefInit)return;chefInit=1;const B=window.BOT,h=new Date().getHours(),p=h<5?"night":h<12?"morning":h<17?"noon":h<22?"evening":"night";
+ say(B?rnd(B.greet[p]):"أهلاً بيك! أنا الشيف إيتو 👨‍🍳");$("#qr").innerHTML=(B?B.quick:["اقترح عليا أكلة"]).map(q=>`<button class="chip">${esc(q)}</button>`).join("")}
+$("#qr").onclick=e=>{if(e.target.tagName=="BUTTON")ask(e.target.textContent)};
+$("#cb").onclick=()=>{const v=$("#ci").value.trim();if(v){$("#ci").value="";ask(v)}};$("#ci").onkeydown=e=>e.key=="Enter"&&$("#cb").click();
+function typeIn(d,html){return new Promise(res=>{const tk=html.match(/<[^>]+>|[^<]/gu)||[],st=Math.max(1,Math.ceil(tk.length/220));let n=0;d.innerHTML="";const m=$("#msgs");
+ const f=()=>{n=Math.min(tk.length,n+st);d.innerHTML=tk.slice(0,n).join("");m.scrollTop=1e9;n<tk.length?setTimeout(f,18):res()};f()})}
+async function ask(t){if(window._busy)return;window._busy=1;say(t,1);const d=say('<span class="typ"><i></i><i></i><i></i></span>');d.classList.add("w");
+ await new Promise(r=>setTimeout(r,450+Math.random()*450));
+ if(!/كمان|تاني|غيرها|غيره/.test(norm(t)))window._last=t;
+ let h;try{h=chefReply(t)}catch(e){h="حصلت مشكلة صغيرة عندي 🙏 جرّب تسأل تاني."}
+ await typeIn(d,h);d.classList.remove("w");window._busy=0;
+ const B=window.BOT;if(B)$("#qr").innerHTML=[...B.quick].sort(()=>Math.random()-.5).slice(0,4).map(q=>`<button class="chip">${esc(q)}</button>`).join("");$("#msgs").scrollTop=1e9}
+const STOPW=/^(عندي|معايا|عندنا|التلاجه|تلاجه|ايه|اعمل|اعمله|اطبخ|حاجه|عايز|عايزه|هعمل|بس|انا|فيها|في|من|مع|ممكن|وايه|اكل|اكله)$/;
+function chefReply(t){const B=window.BOT;if(!B)return"الشيف مش جاهز دلوقتي، اتأكد إن bot_data.js جنب index.html 🙏";
+ const q=norm(t.toLowerCase()).replace(/(.)\1{2,}/g,"$1").replace(/[؟?!.,،]/g," "),has=(...w)=>w.some(z=>q.includes(norm(z))),lk=i=>`<a class="rc" href="#/d/${i}"><span>${R[i].e}</span><div><b>${R[i].n}</b><small>⏱ ${R[i].t} دقيقة · 👨‍🍳 ${LV[R[i].l]}</small></div><i>←</i></a>`;
+ if(/كمان|تاني|غيرها|غيره/.test(q)&&window._last&&window._last!==t)return chefReply(window._last);
+ let best=-1,bl=0;R.forEach((x,i)=>{const n=norm(x.n).replace(/^ال/,"");if(n.length>=3&&q.includes(n)&&n.length>bl){best=i;bl=n.length}});
+ if(best>=0){const x=R[best],f=s=>s.replace(/{n}/g,x.n).replace(/{t}/g,x.t).replace(/{l}/g,LV[x.l]||"").replace(/{i}/g,x.ing.join("، ")).replace(/{s}/g,x.s).replace(/{y}/g,x.y||"");
+  let k="sum";if(has("مكونات","بتتعمل من","محتاج","احتاج","هجيب"))k="ing";else if(has("ازاي","طريقه","اعمل","تحضير","خطوات","اطبخ"))k="steps";else if(has("كام دقيقه","وقت","ياخد","هتخلص","تستوي"))k="time";else if(has("صعب","سهل","مستوي"))k="lvl";else if(has("تاريخ","حكايه","اصل","مين اخترع"))k="story";
+  let r=f(rnd(B.dish[k]));if(k=="steps")r+="<br>"+x.st.map((s,j)=>`${j+1}. ${s[0]} ${s[1]}`).join("<br>");return r+lk(best)}
+ if(has("عندي","معايا","عندنا","التلاجه")){const tk=q.split(/\s+/).map(w=>w.replace(/^و/,"")).filter(w=>w.length>=3&&!STOPW.test(w));
+  if(!tk.length)return rnd(B.fridge.ask);
+  const sc=R.map((x,i)=>({i,s:tk.filter(z=>norm(x.ing.join(" ")).includes(z)).length})).filter(o=>o.s).sort((a,b)=>b.s-a.s).slice(0,4);
+  return sc.length?rnd(B.fridge.ok)+"<br>"+sc.map(o=>lk(o.i)).join(""):rnd(B.fridge.none)}
+ let bs=0,bi=null;B.intents.forEach(it=>{let s=0;it.k.forEach(k=>{if(q.includes(k))s+=k.length});if(s>bs){bs=s;bi=it}});
+ if(bi){if(bi.a=="joke")return rnd(B.jokes);if(bi.a=="tip")return"💡 "+rnd(B.tips);
+  if(bi.a=="suggest"){const h=new Date().getHours(),C=h<11?["فطار"]:h<17?["رئيسي","مشويات"]:h<22?["شوربة ومقبلات","مشويات","حلويات"]:["مشروبات ساخنة","قهوة","حلويات"],L=R.map((x,i)=>i).filter(i=>C.includes(R[i].c)),i=rnd(L.length?L:R.map((x,i)=>i));return rnd(B.sug)+`<br>${lk(i)}`}
+  return rnd(bi.r)}
+ return rnd(B.fallback)}
+
+addEventListener("hashchange",route);route();
+</script>
+</body>
+</html>
